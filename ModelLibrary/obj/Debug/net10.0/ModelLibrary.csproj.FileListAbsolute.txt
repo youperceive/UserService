@@ -1,0 +1,12 @@
+E:\csproj\UserService\ModelLibrary\bin\Debug\net10.0\ModelLibrary.deps.json
+E:\csproj\UserService\ModelLibrary\bin\Debug\net10.0\ModelLibrary.dll
+E:\csproj\UserService\ModelLibrary\bin\Debug\net10.0\ModelLibrary.pdb
+E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\ModelLibrary.csproj.AssemblyReference.cache
+E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\ModelLibrary.GeneratedMSBuildEditorConfig.editorconfig
+E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\ModelLibrary.AssemblyInfoInputs.cache
+E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\ModelLibrary.AssemblyInfo.cs
+E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\ModelLibrary.csproj.CoreCompileInputs.cache
+E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\ModelLibrary.dll
+E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\refint\ModelLibrary.dll
+E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\ModelLibrary.pdb
+E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\ref\ModelLibrary.dll

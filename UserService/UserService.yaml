@@ -1,0 +1,121 @@
+﻿openapi: 3.1.0
+info:
+  title: 'UserService'
+  description: '用户注册，登录'
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:5170'
+paths:
+  /ValidCode:
+    post:
+      summary: '接受 email，向 email 中发送验证码'
+      operationId: 'ValidCode'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ValidCodeRequest'
+      responses:
+        '200':
+          description: '成功向邮箱发送了验证码'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidCodeResponse'
+        '400':
+          description: '注册邮箱已存在'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidCodeResponse'
+  /Register:
+    post:
+      summary: '接受 email, password 及相应的验证码，创建一个用户'
+      operationId: 'Register'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        '200':
+          description: '成功注册了用户'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegisterResponse'
+        '401':
+          description: '验证码不存在或不正确'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegisterResponse'
+  /Login:
+    post:
+      summary: '接受 email, password，返回 token'
+      operationId: 'Login'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: '成功登录'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: '用户名或密码不正确'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+components: 
+  schemas: 
+    BaseResponse:
+      type: object
+      properties: 
+        code:
+          type: integer
+        message:
+          type: string
+    ValidCodeRequest:
+      properties: 
+        email:
+          type: string
+          format: email
+    ValidCodeResponse:
+      allOf:
+        - $ref: '#/components/schemas/BaseResponse'
+    RegisterRequest:
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+        valid_code:
+          type: string
+          format: valid_code
+    RegisterResponse:
+      allOf:
+        - $ref: '#/components/schemas/BaseResponse'
+    LoginRequest:
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+    LoginResponse:
+      allOf:
+        - $ref: '#/components/schemas/BaseResponse'
+        - type: object
+          properties: 
+            token:
+              type: string
+              format: token

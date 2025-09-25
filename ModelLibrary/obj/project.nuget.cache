@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "BZ2E3/OF+UE=",
+  "success": true,
+  "projectFilePath": "E:\\csproj\\UserService\\ModelLibrary\\ModelLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\sqlsugar\\5.1.4.203-preview05\\sqlsugar.5.1.4.203-preview05.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1”而不是项目目标框架“net10.0”还原包“SqlSugar 5.1.4.203-preview05”。此包可能与项目不完全兼容。",
+      "projectPath": "E:\\csproj\\UserService\\ModelLibrary\\ModelLibrary.csproj",
+      "warningLevel": 1,
+      "filePath": "E:\\csproj\\UserService\\ModelLibrary\\ModelLibrary.csproj",
+      "libraryId": "SqlSugar",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}
