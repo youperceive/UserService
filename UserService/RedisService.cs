@@ -1,40 +1,54 @@
-﻿namespace UserService;
+﻿using StackExchange.Redis;
+
+namespace UserService;
 
 public interface IRedisService
 {
-    void Save(string key, string value);
-    string Load(string key);
+    void SetValidCode(string email, string code, TimeSpan expiry);
+    string ValidCode(string email);
+    void SetToken(string userId, string token, TimeSpan expiry);
+    string Token(string userId);
+    
     void Delete(string key);
 }
 
-public class RedisFaker : IRedisService
+public class RedisService : IRedisService
 {
-    private Dictionary<string, string> repo = new Dictionary<string, string>();
-    
-    public void Save(string key, string value)
+    private readonly IDatabase _db;
+
+    public RedisService(string connectionString)
     {
-        if (!repo.TryAdd(key, value))
-        {
-            Console.WriteLine(key + "已存在");
-            // 后续替换为 error 实现
-        }
+        var redis =
+            // 创建 Redis 连接
+            ConnectionMultiplexer.Connect(connectionString);
+        _db = redis.GetDatabase(); 
     }
-    
-    public string Load(string key)
+
+    public void SetValidCode(string email, string code, TimeSpan expiry)
     {
-        if (repo.TryGetValue(key, out var load))
-        {
-            return load;
-        }
-        else
-        {
-            Console.WriteLine(key + "不存在");
-            return string.Empty;
-        }
+        _db.StringSet(email, code, expiry);
     }
-    
+
+    public string ValidCode(string email)
+    {
+        var res = _db.StringGet(email).ToString(); 
+        return res;
+    }
+
+    public void SetToken(string userId, string token, TimeSpan expiry)
+    {
+        _db.StringSet(userId, token, expiry);
+    }
+
+    public string Token(string userId)
+    {
+        var res =  _db.StringGet(userId).ToString();
+        return res;
+    }
+
     public void Delete(string key)
     {
-        repo.Remove(key);
+        _db.KeyDelete(key);
     }
 }
+

@@ -13,6 +13,7 @@
           "Newtonsoft.Json": "13.0.4",
           "Npgsql": "9.0.3",
           "SqlSugar": "5.1.4.203-preview05",
+          "StackExchange.Redis": "2.9.17",
           "Swashbuckle.AspNetCore": "9.0.4"
         },
         "runtime": {
@@ -54,11 +55,30 @@
           }
         }
       },
+      "Pipelines.Sockets.Unofficial/2.2.8": {
+        "runtime": {
+          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "2.2.8.1080"
+          }
+        }
+      },
       "SqlSugar/5.1.4.203-preview05": {
         "runtime": {
           "lib/SqlSugar.dll": {
             "assemblyVersion": "5.1.4.200",
             "fileVersion": "5.1.4.200"
+          }
+        }
+      },
+      "StackExchange.Redis/2.9.17": {
+        "dependencies": {
+          "Pipelines.Sockets.Unofficial": "2.2.8"
+        },
+        "runtime": {
+          "lib/net8.0/StackExchange.Redis.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.9.17.8862"
           }
         }
       },
@@ -146,12 +166,26 @@
       "path": "npgsql/9.0.3",
       "hashPath": "npgsql.9.0.3.nupkg.sha512"
     },
+    "Pipelines.Sockets.Unofficial/2.2.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zG2FApP5zxSx6OcdJQLbZDk2AVlN2BNQD6MorwIfV6gVj0RRxWPEp2LXAxqDGZqeNV1Zp0BNPcNaey/GXmTdvQ==",
+      "path": "pipelines.sockets.unofficial/2.2.8",
+      "hashPath": "pipelines.sockets.unofficial.2.2.8.nupkg.sha512"
+    },
     "SqlSugar/5.1.4.203-preview05": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-I8N2L05rikfxYu5h3no5J3+v0mFu3uoWveaEXXSJf5n078t9KekSr2qFPqHyoKnI49GubfdNDwj0WyIKM1jzKA==",
       "path": "sqlsugar/5.1.4.203-preview05",
       "hashPath": "sqlsugar.5.1.4.203-preview05.nupkg.sha512"
+    },
+    "StackExchange.Redis/2.9.17": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Enpv0bfMP6SRownWx1CmaHantT9626Z6QSdHOidKlm0zLrBaPe7ueQf5phJH6Zkf3lDe5rr6JvXAgEP1ogijug==",
+      "path": "stackexchange.redis/2.9.17",
+      "hashPath": "stackexchange.redis.2.9.17.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/9.0.4": {
       "type": "package",

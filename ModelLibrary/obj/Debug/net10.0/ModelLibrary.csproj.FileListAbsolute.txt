@@ -10,3 +10,4 @@ E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\ModelLibrary.dll
 E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\refint\ModelLibrary.dll
 E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\ModelLibrary.pdb
 E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\ref\ModelLibrary.dll
+E:\csproj\UserService\ModelLibrary\obj\Debug\net10.0\ModelLibrary.sourcelink.json
