@@ -6,10 +6,12 @@ public interface IRedisService
 {
     void SetValidCode(string email, string code, TimeSpan expiry);
     string ValidCode(string email);
+    
+    void DeleteValidCode(string email);
     void SetToken(string userId, string token, TimeSpan expiry);
     string Token(string userId);
     
-    void Delete(string key);
+    void DeleteToken(string userId);
 }
 
 public class RedisService : IRedisService
@@ -26,29 +28,34 @@ public class RedisService : IRedisService
 
     public void SetValidCode(string email, string code, TimeSpan expiry)
     {
-        _db.StringSet(email, code, expiry);
+        _db.StringSet("valid_code:" + email, code, expiry);
     }
 
     public string ValidCode(string email)
     {
-        var res = _db.StringGet(email).ToString(); 
+        var res = _db.StringGet("valid_code:" + email).ToString(); 
         return res;
     }
 
     public void SetToken(string userId, string token, TimeSpan expiry)
     {
-        _db.StringSet(userId, token, expiry);
+        _db.StringSet("token:" + userId, token, expiry);
     }
 
     public string Token(string userId)
     {
-        var res =  _db.StringGet(userId).ToString();
+        var res =  _db.StringGet("token:" + userId).ToString();
         return res;
     }
 
-    public void Delete(string key)
+    public void DeleteValidCode(string email)
     {
-        _db.KeyDelete(key);
+        _db.KeyDelete("valid_code:" + email);
+    }
+
+    public void DeleteToken(string userId)
+    {
+        _db.KeyDelete("token:" + userId);
     }
 }
 

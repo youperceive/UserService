@@ -16,4 +16,11 @@ public static class Util
         var hash = SHA512.HashData(bytes);
         return Convert.ToHexString(hash).ToLower();
     }
+
+    public static string GenerateToken(string userId)
+    {
+        var bytes = Encoding.UTF8.GetBytes(userId + DateTime.Now.Ticks);
+        var hash = SHA512.HashData(bytes);
+        return Convert.ToHexString(hash).ToLower();
+    }
 }
