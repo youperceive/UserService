@@ -34,8 +34,8 @@ public class UserService(IRedisService redis, IUserRepository db)
             return new LoginResponse(401, "密码错误");
         }
 
-        var token = Util.GenerateToken(req.Email);
-        redis.SetToken(req.Email, token, TimeSpan.FromMinutes(5));
+        var token = Util.GenerateToken(user.Id.ToString());
+        redis.SetToken(user.Id.ToString(), token, TimeSpan.FromMinutes(5));
         return new LoginResponse(200, "success", token);
     }
 
@@ -43,5 +43,10 @@ public class UserService(IRedisService redis, IUserRepository db)
     public bool IsLogin(string userId, string token)
     {
         return redis.Token(userId) == token;
+    }
+
+    public bool HasHigherRoleThan(int id, string role)
+    {
+        return db.HasRoleHigherThan(id, role);
     }
 }

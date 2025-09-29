@@ -61,4 +61,42 @@ public class UserController(UserService userService) : ControllerBase
             return StatusCode(500, new BaseResponse(500, $"服务器错误: {ex.Message}"));
         }
     }
+    
+    /// <summary>
+    /// 检查用户是否已登录
+    /// </summary>
+    [HttpGet("is-login")]
+    public ActionResult<bool> IsLogin([FromQuery] string userId, [FromQuery] string token)
+    {
+        try
+        {
+            var isLoggedIn = userService.IsLogin(userId, token);
+            return Ok(isLoggedIn);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new BaseResponse(500, $"服务器错误: {ex.Message}"));
+        }
+    }
+    
+    /// <summary>
+    /// 检查用户是否拥有比指定角色更高的权限
+    /// </summary>
+    [HttpGet("has-higher-role")]
+    public ActionResult<BaseResponse> HasHigherRoleThan([FromQuery] int id, [FromQuery] string role)
+    {
+        try
+        {
+            var hasHigherRole = userService.HasHigherRoleThan(id, role);
+            return Ok(hasHigherRole);
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(new BaseResponse(404, ex.Message));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new BaseResponse(500, $"服务器错误: {ex.Message}"));
+        }
+    }
 }
