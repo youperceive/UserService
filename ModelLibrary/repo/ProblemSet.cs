@@ -93,7 +93,7 @@ public class IoFileOfProblem
     /// <summary>
     /// 数据库内部主键（自增）
     /// </summary>
-    [SugarColumn(IsPrimaryKey = true)]
+    [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
     public int Id { get; set; }
 
     /// <summary>
