@@ -8,7 +8,7 @@ public class User
     [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
     public int Id { get; set; }
 
-    [SugarColumn(Length = 255)]
+    [SugarColumn(Length = 255)] // 添加 unique 约束
     public string Email { get; init; } = "";
 
     [SugarColumn(Length = 255)]

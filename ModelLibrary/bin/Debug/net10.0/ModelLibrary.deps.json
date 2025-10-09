@@ -8,13 +8,13 @@
     ".NETCoreApp,Version=v10.0": {
       "ModelLibrary/1.0.0": {
         "dependencies": {
-          "SqlSugar": "5.1.4.203-preview05"
+          "SqlSugar": "5.1.4.200"
         },
         "runtime": {
           "ModelLibrary.dll": {}
         }
       },
-      "SqlSugar/5.1.4.203-preview05": {
+      "SqlSugar/5.1.4.200": {
         "runtime": {
           "lib/SqlSugar.dll": {
             "assemblyVersion": "5.1.4.200",
@@ -30,12 +30,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SqlSugar/5.1.4.203-preview05": {
+    "SqlSugar/5.1.4.200": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-I8N2L05rikfxYu5h3no5J3+v0mFu3uoWveaEXXSJf5n078t9KekSr2qFPqHyoKnI49GubfdNDwj0WyIKM1jzKA==",
-      "path": "sqlsugar/5.1.4.203-preview05",
-      "hashPath": "sqlsugar.5.1.4.203-preview05.nupkg.sha512"
+      "sha512": "sha512-Cgj7hge5kkue6C6VhTj7HB4B6jLEdA+CsxF/gdwG0LtDSBFfKI6aI1rk3X+EwCecWqmfHY7EHOLyPY1lW1sOCA==",
+      "path": "sqlsugar/5.1.4.200",
+      "hashPath": "sqlsugar.5.1.4.200.nupkg.sha512"
     }
   }
 }

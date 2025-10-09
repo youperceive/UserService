@@ -12,6 +12,10 @@ public interface IRedisService
     string Token(string userId);
     
     void DeleteToken(string userId);
+    
+    void Set(string pre, string key, string value, TimeSpan expiry);
+    string Value(string pre, string key);
+    void Delete(string pre, string key);
 }
 
 public class RedisService : IRedisService
@@ -56,6 +60,21 @@ public class RedisService : IRedisService
     public void DeleteToken(string userId)
     {
         _db.KeyDelete("token:" + userId);
+    }
+
+    public void Set(string pre, string key, string value, TimeSpan expiry)
+    {
+        _db.StringSet(pre + key, value, expiry);
+    }
+
+    public string Value(string pre, string key)
+    {
+        return _db.StringGet(pre + key).ToString();
+    }
+
+    public void Delete(string pre, string key)
+    {
+        _db.KeyDelete(pre + key);
     }
 }
 

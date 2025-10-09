@@ -46,7 +46,7 @@
           "dependencies": {
             "SqlSugar": {
               "target": "Package",
-              "version": "[5.1.4.203-preview05, )"
+              "version": "[5.1.4.200, )"
             }
           },
           "imports": [

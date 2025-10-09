@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net10.0": {
-      "SqlSugar/5.1.4.203-preview05": {
+      "SqlSugar/5.1.4.200": {
         "type": "package",
         "compile": {
           "lib/SqlSugar.dll": {}
@@ -14,22 +14,22 @@
     }
   },
   "libraries": {
-    "SqlSugar/5.1.4.203-preview05": {
-      "sha512": "I8N2L05rikfxYu5h3no5J3+v0mFu3uoWveaEXXSJf5n078t9KekSr2qFPqHyoKnI49GubfdNDwj0WyIKM1jzKA==",
+    "SqlSugar/5.1.4.200": {
+      "sha512": "Cgj7hge5kkue6C6VhTj7HB4B6jLEdA+CsxF/gdwG0LtDSBFfKI6aI1rk3X+EwCecWqmfHY7EHOLyPY1lW1sOCA==",
       "type": "package",
-      "path": "sqlsugar/5.1.4.203-preview05",
+      "path": "sqlsugar/5.1.4.200",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/SqlSugar.dll",
-        "sqlsugar.5.1.4.203-preview05.nupkg.sha512",
+        "sqlsugar.5.1.4.200.nupkg.sha512",
         "sqlsugar.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "SqlSugar >= 5.1.4.203-preview05"
+      "SqlSugar >= 5.1.4.200"
     ]
   },
   "packageFolders": {
@@ -77,7 +77,7 @@
         "dependencies": {
           "SqlSugar": {
             "target": "Package",
-            "version": "[5.1.4.203-preview05, )"
+            "version": "[5.1.4.200, )"
           }
         },
         "imports": [
@@ -378,7 +378,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1”而不是项目目标框架“net10.0”还原包“SqlSugar 5.1.4.203-preview05”。此包可能与项目不完全兼容。",
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1”而不是项目目标框架“net10.0”还原包“SqlSugar 5.1.4.200”。此包可能与项目不完全兼容。",
       "libraryId": "SqlSugar",
       "targetGraphs": [
         "net10.0"

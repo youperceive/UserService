@@ -179,7 +179,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "SqlSugar": "5.1.4.203-preview05"
+          "SqlSugar": "5.1.4.200"
         },
         "compile": {
           "bin/placeholder/ModelLibrary.dll": {}
