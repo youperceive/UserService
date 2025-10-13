@@ -19,6 +19,9 @@ public class Problem
     /// </summary>
     [SugarColumn(Length = 50)] // 唯一约束，确保业务标识不重复
     public string Uuid { get; init; } = "";
+    
+    [SugarColumn(Length = 50)] // 题目标题
+    public string Title { get; init; } = "";
 
     /// <summary>
     /// 题目描述
@@ -104,7 +107,7 @@ public class IoFileOfProblem
     /// <summary>
     /// 示例序号（用于区分同一题目的多组示例，如 1、2、3）
     /// </summary>
-    public int IoIndex { get; set; } = 1;
+    public int Index { get; set; } = 1;
 
     /// <summary>
     /// 输入内容（长字符串，包含换行等格式）
@@ -120,6 +123,52 @@ public class IoFileOfProblem
 
     /// <summary>
     /// 导航属性：关联的题目（可选，用于 SqlSugar 导航查询）
+    /// </summary>
+    [SugarColumn(IsIgnore = true)] // 忽略数据库映射，仅用于内存导航
+    public Problem? Problem { get; set; }
+}
+
+/// <summary>
+/// 题目-输入输出示例详细表（包含样例解释）
+/// </summary>
+public class IoExampleProblem
+{
+    /// <summary>
+    /// 数据库内部主键（自增）
+    /// </summary>
+    [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
+    public int Id { get; set; }
+
+    /// <summary>
+    /// 关联的题目数据库ID（外键）
+    /// </summary>
+    public int ProblemId { get; set; }
+
+    /// <summary>
+    /// 示例序号（用于区分同一题目的多组示例，如 1、2、3）
+    /// </summary>
+    public int Index { get; set; } = 1;
+
+    /// <summary>
+    /// 输入内容（长字符串，包含换行等格式）
+    /// </summary>
+    [SugarColumn(ColumnDataType = "text")]
+    public string InExample { get; set; } = "";
+
+    /// <summary>
+    /// 输出内容（长字符串，包含换行等格式）
+    /// </summary>
+    [SugarColumn(ColumnDataType = "text")]
+    public string OutExample { get; set; } = "";
+
+    /// <summary>
+    /// 样例解释（说明该示例的具体含义和解题思路）
+    /// </summary>
+    [SugarColumn(ColumnDataType = "text")]
+    public string Explanation { get; set; } = "";
+
+    /// <summary>
+    /// 导航属性：关联的题目（用于 SqlSugar 导航查询）
     /// </summary>
     [SugarColumn(IsIgnore = true)] // 忽略数据库映射，仅用于内存导航
     public Problem? Problem { get; set; }

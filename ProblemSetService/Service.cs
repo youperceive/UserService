@@ -23,8 +23,8 @@ public class ProblemSetService(ProblemSetRepository repo)
                 return new CreateProblemResponse(400, "难度等级不能为空");
 
             // 2. 处理时间/内存限制转换（避免格式错误导致崩溃，失败用默认值）
-            int timeLimit = 2000; // 默认2000毫秒
-            int memoryLimit = 512; // 默认512MB
+            var timeLimit = 2000; // 默认2000毫秒
+            var memoryLimit = 512; // 默认512MB
             if (!string.IsNullOrWhiteSpace(request.TimeLimit))
                 int.TryParse(request.TimeLimit.Replace("(默认毫秒)", ""), out timeLimit);
             if (!string.IsNullOrWhiteSpace(request.MemoryLimit))
@@ -105,6 +105,122 @@ public class ProblemSetService(ProblemSetRepository repo)
         catch (Exception ex)
         {
             return new GetIoFileOfProblemResponse(500, $"样例查询失败：{ex.Message}");
+        }
+    }
+    
+    public AddIoExampleOfProblemResponse AddIoExampleOfProblem(AddIoExampleOfProblemRequest request)
+    {
+        try
+        {
+            repo.AddIoExampleOfProblem(request.Uuid, request.InExample, request.OutExample, request.Explanation);
+            return new AddIoExampleOfProblemResponse(200, "样例添加成功");
+        }
+        catch (Exception ex)
+        {
+            return new AddIoExampleOfProblemResponse(500, ex.Message);
+        }
+    }
+
+    public GetIoExampleOfProblemResponse GetIoExampleOfProblem(GetIoExampleOfProblemRequest request)
+    {
+        try
+        {
+            var examples = repo.GetIoExampleOfProblem(request.Uuid);
+            
+            var examplesDto = examples.Select(e => new 
+                IoExampleDto(e.Index, e.InExample, e.OutExample, e.Explanation)).ToList();
+        
+            return new GetIoExampleOfProblemResponse(examplesDto, "获取成功");
+        }
+        catch (Exception ex)
+        {
+            return new GetIoExampleOfProblemResponse(500, ex.Message);
+        }
+    }
+    
+    /// <summary>
+    /// 获取题目完整信息（包含基本信息、标签和带解释的样例）
+    /// </summary>
+    public GetProblemResponse GetProblem(GetProblemRequest request)
+    {
+        try
+        {
+            // 1. 基础参数校验
+            if (string.IsNullOrWhiteSpace(request.Uuid))
+                return new GetProblemResponse(400, "题目业务唯一标识（uuid）不能为空");
+
+            // 2. 查询题目基本信息
+            var problem = repo.GetProblemByUuid(request.Uuid);
+            if (problem == null)
+                return new GetProblemResponse(404, "未找到该uuid对应的题目");
+
+            // 3. 查询题目标签
+            var tags = repo.GetTagsOfProblem(problem.Uuid);
+
+            // 4. 查询带解释的样例并转换格式
+            var examples = repo.GetIoExampleOfProblem(request.Uuid);
+            var ioExamples = examples.Select(e => new List<string>
+            {
+                e.InExample,
+                e.OutExample,
+                e.Explanation
+            }).ToList();
+
+            // 5. 构造完整响应对象
+            return new GetProblemResponse(
+                uuid: problem.Uuid,
+                title: problem.Title,  // 注意：此处假设Problem实体有Title属性，需与实际实体匹配
+                description: problem.Description,
+                inputFormat: problem.InputFormat,
+                outputFormat: problem.OutputFormat,
+                ioExample: ioExamples,
+                tags: tags,
+                difficulty: problem.Difficulty,
+                timeLimit: $"{problem.TimeLimit}(默认毫秒)",
+                memoryLimit: $"{problem.MemoryLimit}(默认MB)",
+                message: "题目详情获取成功"
+            );
+        }
+        catch (InvalidOperationException)
+        {
+            return new GetProblemResponse(404, "未找到该uuid对应的题目");
+        }
+        catch (Exception ex)
+        {
+            return new GetProblemResponse(500, $"获取题目详情失败：{ex.Message}");
+        }
+    }
+    
+    /// <summary>
+    /// 为题目添加标签（含参数校验和重复处理）
+    /// </summary>
+    public AddTagOfProblemResponse AddTagOfProblem(AddTagOfProblemRequest request)
+    {
+        try
+        {
+            // 1. 基础参数校验（必填项不能为空）
+            if (string.IsNullOrWhiteSpace(request.Uuid))
+                return new AddTagOfProblemResponse(400, "题目业务唯一标识（uuid）不能为空");
+            if (string.IsNullOrWhiteSpace(request.Tag))
+                return new AddTagOfProblemResponse(400, "标签名称（tag）不能为空");
+
+            // 2. 调用Repo添加标签（Repo返回bool表示是否新增成功）
+            var addSuccess = repo.AddTagOfProblem(request.Uuid, request.Tag);
+            if (!addSuccess)
+                return new AddTagOfProblemResponse(400, $"该题目已存在标签：{request.Tag}");
+
+            // 3. 添加成功
+            return new AddTagOfProblemResponse();
+        }
+        catch (InvalidOperationException ex)
+        {
+            // 捕获Repo中“题目不存在”的异常
+            return new AddTagOfProblemResponse(404, ex.Message);
+        }
+        catch (Exception ex)
+        {
+            // 通用服务器异常
+            return new AddTagOfProblemResponse(500, $"标签添加失败：{ex.Message}");
         }
     }
 }
