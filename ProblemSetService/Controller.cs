@@ -166,4 +166,99 @@ public class ProblemController(ProblemSetService problemSetService) : Controller
             return StatusCode(500, new BaseResponse(500, $"服务器错误: {ex.Message}"));
         }
     }
+    
+    #region 提交记录相关接口（新增）
+    /// <summary>
+    /// 创建代码提交记录
+    /// </summary>
+    [HttpPost("submission/create")]
+    public ActionResult<CreateSubmissionResponse> CreateSubmission([FromBody] CreateSubmissionRequest request)
+    {
+        try
+        {
+            // 调用Service层创建提交（返回含实体的响应）
+            var response = problemSetService.CreateSubmission(request);
+            
+            // 统一响应处理：非200状态码返回对应StatusCode，成功返回Ok
+            return response.StatusCode != 200 
+                ? StatusCode(response.StatusCode, response) 
+                : Ok(response);
+        }
+        catch (Exception ex)
+        {
+            // 通用异常处理（与其他接口保持一致）
+            return StatusCode(500, new BaseResponse(500, $"服务器错误: {ex.Message}"));
+        }
+    }
+
+    /// <summary>
+    /// 获取单个提交记录详情
+    /// </summary>
+    [HttpGet("submission/get")]
+    public ActionResult<GetSubmissionResponse> GetSubmission([FromQuery] string submissionUuid)
+    {
+        try
+        {
+            // 1. 构造请求对象（与GetProblem接口参数处理逻辑一致）
+            var request = new GetSubmissionRequest { SubmissionUuid = submissionUuid };
+            
+            // 2. 调用Service层查询提交
+            var response = problemSetService.GetSubmission(request);
+            
+            // 3. 响应处理（与其他查询接口逻辑统一）
+            return response.StatusCode != 200 
+                ? StatusCode(response.StatusCode, response) 
+                : Ok(response);
+        }
+        catch (KeyNotFoundException ex)
+        {
+            // 捕获“提交记录不存在”异常（与GetProblem接口异常处理对齐）
+            return NotFound(new BaseResponse(404, ex.Message));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new BaseResponse(500, $"服务器错误: {ex.Message}"));
+        }
+    }
+
+    /// <summary>
+    /// 获取提交记录列表（支持按用户/题目筛选、分页）
+    /// </summary>
+    [HttpGet("submission/list")]
+    public ActionResult<GetSubmissionListResponse> GetSubmissionList(
+        [FromQuery] string? userId,
+        [FromQuery] string? problemId,
+        [FromQuery] int page = 1,
+        [FromQuery] int pageSize = 10)
+    {
+        try
+        {
+            // 1. 构造分页查询请求（参数映射与现有分页逻辑一致）
+            var request = new GetSubmissionListRequest
+            {
+                UserId = userId,
+                ProblemUuid = problemId,
+                Page = page,
+                PageSize = pageSize
+            };
+            
+            // 2. 调用Service层查询列表
+            var response = problemSetService.GetSubmissionList(request);
+            
+            // 3. 响应处理（与其他列表查询接口统一）
+            return response.StatusCode != 200 
+                ? StatusCode(response.StatusCode, response) 
+                : Ok(response);
+        }
+        catch (KeyNotFoundException ex)
+        {
+            // 筛选条件中用户/题目不存在时的异常处理
+            return NotFound(new BaseResponse(404, ex.Message));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new BaseResponse(500, $"服务器错误: {ex.Message}"));
+        }
+    }
+    #endregion
 }

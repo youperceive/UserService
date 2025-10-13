@@ -223,4 +223,126 @@ public class ProblemSetService(ProblemSetRepository repo)
             return new AddTagOfProblemResponse(500, $"标签添加失败：{ex.Message}");
         }
     }
+    
+    #region 提交记录相关逻辑（新增）
+    /// <summary>
+    /// 创建提交记录（返回提交实体，供Controller转DTO）
+    /// </summary>
+    public CreateSubmissionResponse CreateSubmission(CreateSubmissionRequest request)
+    {
+        try
+        {
+            // 1. 基础参数校验（与现有方法校验风格一致）
+            if (string.IsNullOrWhiteSpace(request.UserId))
+                return new CreateSubmissionResponse(400, "用户标识（userId）不能为空");
+            if (string.IsNullOrWhiteSpace(request.ProblemUuid))
+                return new CreateSubmissionResponse(400, "题目标识（problemId）不能为空");
+            if (string.IsNullOrWhiteSpace(request.Lang))
+                return new CreateSubmissionResponse(400, "编程语言（lang）不能为空");
+            if (string.IsNullOrWhiteSpace(request.Code))
+                return new CreateSubmissionResponse(400, "提交代码不能为空");
+
+            // 2. UUID转内部ID（复用Repo辅助方法，查不到抛InvalidOperationException）
+            int userId = repo.GetUserIdByUuid(request.UserId);
+            int problemId = repo.GetProblemIdByUuid(request.ProblemUuid);
+
+            // 3. 构造提交实体（匹配Submission实体字段，默认状态为待评测）
+            var submissionEntity = new Submission
+            {
+                Uuid = Guid.NewGuid().ToString("N"), // 生成短哈希值作为对外标识
+                UserId = userId,
+                ProblemId = problemId,
+                SubmissionTime = DateTime.Now,
+                Lang = request.Lang,
+                State = "Pending", // 初始状态：待评测
+                Time = 0, // 未运行时时间为0
+                Memory = 0, // 未运行时内存为0
+                Code = request.Code
+            };
+
+            // 4. 调用Repo保存提交记录
+            var savedEntity = repo.CreateSubmission(submissionEntity);
+
+            // 5. 返回业务响应（携带实体给Controller，不做DTO转换）
+            return new CreateSubmissionResponse(200, "提交成功", savedEntity);
+        }
+        catch (InvalidOperationException ex)
+        {
+            // 捕获Repo中“用户/题目不存在”的异常（与AddIoFileOfProblem异常逻辑一致）
+            return new CreateSubmissionResponse(404, ex.Message);
+        }
+        catch (Exception ex)
+        {
+            // 通用服务器异常（错误信息格式与现有方法统一）
+            return new CreateSubmissionResponse(500, $"提交失败：{ex.Message}");
+        }
+    }
+
+    /// <summary>
+    /// 获取单个提交记录（返回实体，供Controller转DTO）
+    /// </summary>
+    public GetSubmissionResponse GetSubmission(GetSubmissionRequest request)
+    {
+        try
+        {
+            // 1. 基础参数校验
+            if (string.IsNullOrWhiteSpace(request.SubmissionUuid))
+                return new GetSubmissionResponse(400, "提交标识（id）不能为空");
+
+            // 2. 调用Repo查询提交实体（含关联的User/Problem）
+            var submissionEntity = repo.GetSubmissionEntityByUuid(request.SubmissionUuid);
+            if (submissionEntity == null)
+                return new GetSubmissionResponse(404, "未找到该提交记录");
+
+            // 3. 返回实体（携带实体给Controller）
+            return new GetSubmissionResponse(submissionEntity, "查询成功");
+        }
+        catch (Exception ex)
+        {
+            return new GetSubmissionResponse(500, $"查询提交失败：{ex.Message}");
+        }
+    }
+
+    /// <summary>
+    /// 获取提交记录列表（支持筛选、分页，返回实体列表+总记录数）
+    /// </summary>
+    public GetSubmissionListResponse GetSubmissionList(GetSubmissionListRequest request)
+    {
+        try
+        {
+            // 1. 分页参数校验（避免非法分页请求）
+            int page = Math.Max(request.Page, 1); // 页码最小为1
+            int pageSize = Math.Clamp(request.PageSize, 1, 100); // 每页条数限制1-100条
+
+            // 2. 调用Repo查询实体列表（out参数获取总记录数）
+            repo.GetSubmissionEntityListByFilter(
+                userUuid: request.UserId,
+                problemUuid: request.ProblemUuid,
+                page: page,
+                pageSize: pageSize,
+                out int total
+            );
+
+            var submissionEntities = repo.GetSubmissionEntityListByFilter(
+                request.UserId, 
+                request.ProblemUuid, 
+                page, 
+                pageSize, 
+                out total
+            );
+
+            // 3. 返回实体列表+分页信息（给Controller处理DTO和分页响应）
+            return new GetSubmissionListResponse(submissionEntities, total, pageSize);
+        }
+        catch (InvalidOperationException ex)
+        {
+            // 若筛选时用户/题目不存在（Repo抛异常），返回404
+            return new GetSubmissionListResponse(404, ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return new GetSubmissionListResponse(500, $"查询提交列表失败：{ex.Message}");
+        }
+    }
+    #endregion
 }

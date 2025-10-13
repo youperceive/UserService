@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProblemSetService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f28cbb80622a4fc4f9f6cf1f8db18e1b6b083545")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d9fac9e1bae8e04baeb7cc6f3e80a3d5c75070f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProblemSetService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProblemSetService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

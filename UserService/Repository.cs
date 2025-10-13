@@ -5,7 +5,7 @@ namespace UserService;
 
 public interface IUserRepository
 {
-    public void CreateUser(string email, string password);
+    public void CreateUser(string uuid, string email, string password);
 
     public User GetUserByEmail(string email);
     public User GetUserById(int id);
@@ -41,10 +41,11 @@ public class UserRepository : IUserRepository
         _db.CodeFirst.InitTables<UserRole>();
     }
 
-    public void CreateUser(string email, string password)
+    public void CreateUser(string uuid, string email, string password)
     {
         var user = new User
         {
+            Uuid = uuid,
             Email = email,
             PasswordHash = Util.HashPassword(password),
         };  

@@ -62,6 +62,10 @@ public class Problem
     /// 内存限制（数值，默认单位 MB）
     /// </summary>
     public int MemoryLimit { get; set; } = 512;
+    
+    [SugarColumn(IsIgnore = true)]
+    [Navigate(NavigateType.OneToMany, nameof(Submission.ProblemId))]
+    public List<Submission>? Submissions { get; set; }
 }
 
 /// <summary>
@@ -172,4 +176,86 @@ public class IoExampleProblem
     /// </summary>
     [SugarColumn(IsIgnore = true)] // 忽略数据库映射，仅用于内存导航
     public Problem? Problem { get; set; }
+}
+
+/// <summary>
+/// 提交记录表（存储用户对题目的代码提交信息）
+/// </summary>
+public class Submission
+{
+    /// <summary>
+    /// 数据库内部主键（自增，仅用于后端表间关联）
+    /// </summary>
+    [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
+    public int Id { get; set; }
+
+    /// <summary>
+    /// 提交对外唯一标识（哈希值，如 "33112468"，供前端展示和查询）
+    /// </summary>
+    [SugarColumn(Length = 50)] // 唯一约束，确保对外标识不重复
+    public string Uuid { get; set; } = Guid.NewGuid().ToString("N"); // 默认生成短哈希值
+
+    /// <summary>
+    /// 关联用户的数据库ID（外键，对应 User.Id）
+    /// </summary>
+    [SugarColumn] // 隐含外键关联逻辑，与 User 表的内部主键匹配
+    public int UserId { get; set; }
+
+    /// <summary>
+    /// 关联题目的数据库ID（外键，对应 Problem.Id）
+    /// </summary>
+    [SugarColumn] // 与 Problem 表、IoFileOfProblem 等的关联逻辑一致
+    public int ProblemId { get; set; }
+
+    /// <summary>
+    /// 提交时间（如 "Oct/13/2025 11:36"，后端存储为标准时间格式）
+    /// </summary>
+    [SugarColumn]
+    public DateTime SubmissionTime { get; set; } = DateTime.Now; // 默认值为当前提交时间
+
+    /// <summary>
+    /// 编程语言（如 "c++23" "java17" "python3.11"）
+    /// </summary>
+    [SugarColumn(Length = 50)] // 长度足够覆盖主流语言标识
+    public string Lang { get; set; } = "";
+
+    /// <summary>
+    /// 提交状态（如 "TLE" "AC" "WA" "RE" "Pending"）
+    /// </summary>
+    [SugarColumn(Length = 50)] // 长度覆盖所有可能的评测状态
+    public string State { get; set; } = "Pending"; // 默认状态为"待评测"
+
+    /// <summary>
+    /// 运行时间（单位：毫秒，如 "4000"，未运行时为0）
+    /// </summary>
+    [SugarColumn]
+    public int Time { get; set; } = 0;
+
+    /// <summary>
+    /// 内存使用（单位：MB，如 "0"，未运行时为0）
+    /// </summary>
+    [SugarColumn]
+    public int Memory { get; set; } = 0;
+
+    /// <summary>
+    /// 提交的代码内容（长文本存储）
+    /// </summary>
+    [SugarColumn(ColumnDataType = "text")] // 支持大段代码存储（如数千行代码）
+    public string Code { get; set; } = "";
+
+    #region 导航属性（用于 SqlSugar 关联查询，不映射到数据库）
+    /// <summary>
+    /// 关联的用户信息（可选，用于快速查询提交所属用户）
+    /// </summary>
+    [SugarColumn(IsIgnore = true)]
+    [Navigate(NavigateType.ManyToOne, nameof(UserId))] // 修正为 ManyToOne
+    public User? User { get; set; }
+
+    /// <summary>
+    /// 关联的题目信息（可选，用于快速查询提交所属题目）
+    /// </summary>
+    [SugarColumn(IsIgnore = true)]
+    [Navigate(NavigateType.ManyToOne, nameof(UserId))] // 修正为 ManyToOne
+    public Problem? Problem { get; set; }
+    #endregion
 }

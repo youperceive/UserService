@@ -27,6 +27,7 @@ public class ProblemSetRepository : IProblemSetRepository
         _db.CodeFirst.InitTables<TagOfProblem>();
         _db.CodeFirst.InitTables<IoFileOfProblem>();
         _db.CodeFirst.InitTables<IoExampleProblem>();
+        _db.CodeFirst.InitTables<Submission>();
     }
 
     public void CreateProblem(Problem p)
@@ -131,4 +132,82 @@ public class ProblemSetRepository : IProblemSetRepository
 
         return true; // 添加成功
     }
+    
+    #region 提交记录方法（返回实体）
+    public Submission CreateSubmission(Submission submission)
+    {
+        // 插入并返回带自增ID的实体
+        return _db.Insertable(submission).ExecuteReturnEntity();
+    }
+
+    public Submission? GetSubmissionEntityByUuid(string submissionUuid)
+    {
+        // 关联查询：加载User和Problem导航属性
+        return _db.Queryable<Submission>()
+            .Includes(s => s.User) // 加载关联的User实体（需确保Submission有User导航属性）
+            .Includes(s => s.Problem) // 加载关联的Problem实体
+            .Where(s => s.Uuid == submissionUuid)
+            .First();
+    }
+
+    public List<Submission> GetSubmissionEntityListByFilter(string? userUuid, string? problemUuid, int page, int pageSize, out int total)
+    {
+        var query = _db.Queryable<Submission>()
+            .Includes(s => s.User)
+            .Includes(s => s.Problem);
+
+        // 筛选条件（UUID转内部ID）
+        if (!string.IsNullOrWhiteSpace(userUuid))
+        {
+            int userId = GetUserIdByUuid(userUuid);
+            query = query.Where(s => s.UserId == userId);
+        }
+        if (!string.IsNullOrWhiteSpace(problemUuid))
+        {
+            int problemId = GetProblemIdByUuid(problemUuid);
+            query = query.Where(s => s.ProblemId == problemId);
+        }
+
+        // 总记录数
+        total = query.Count();
+
+        // 分页查询（按提交时间倒序）
+        return query.OrderBy(s => s.SubmissionTime, OrderByType.Desc)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+    }
+    #endregion
+    
+    #region 辅助方法：UUID转内部ID
+    /// <summary>
+    /// 用户UUID转内部ID（查不到抛异常，与题目转换逻辑一致）
+    /// </summary>
+    public int GetUserIdByUuid(string userUuid)
+    {
+        var user = _db.Queryable<User>()
+            .Where(u => u.Uuid == userUuid)
+            .First();
+
+        if (user == null)
+            throw new InvalidOperationException($"未找到UUID为【{userUuid}】的用户");
+
+        return user.Id;
+    }
+
+    /// <summary>
+    /// 题目UUID转内部ID（复用之前逻辑，确保实现）
+    /// </summary>
+    public int GetProblemIdByUuid(string problemUuid)
+    {
+        var problem = _db.Queryable<Problem>()
+            .Where(p => p.Uuid == problemUuid)
+            .First();
+
+        if (problem == null)
+            throw new InvalidOperationException($"未找到UUID为【{problemUuid}】的题目");
+
+        return problem.Id;
+    }
+    #endregion
 }

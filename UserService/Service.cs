@@ -20,7 +20,7 @@ public class UserService(IRedisService redis, IUserRepository db)
         }
         
         redis.DeleteValidCode(req.Email);
-        db.CreateUser(req.Email, req.Password);
+        db.CreateUser(req.Uuid, req.Email, req.Password);
         return new RegisterResponse();
     }
     

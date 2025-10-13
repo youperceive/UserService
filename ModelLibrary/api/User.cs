@@ -26,6 +26,10 @@ namespace ModelLibrary.api
     public class RegisterRequest
     {
         [Required]
+        [JsonPropertyName("uuid")]
+        public string Uuid { get; set; } = string.Empty;
+        
+        [Required]
         [EmailAddress]
         [JsonPropertyName("email")]
         public string Email { get; set; } = string.Empty;
