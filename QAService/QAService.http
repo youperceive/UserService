@@ -1,0 +1,6 @@
+@QAService_HostAddress = http://localhost:5160
+
+GET {{QAService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

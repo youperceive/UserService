@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "ModelLibrary/1.0.0": {
+        "dependencies": {
+          "SqlSugar": "5.1.4.200"
+        },
+        "runtime": {
+          "ModelLibrary.dll": {}
+        }
+      },
+      "SqlSugar/5.1.4.200": {
+        "runtime": {
+          "lib/SqlSugar.dll": {
+            "assemblyVersion": "5.1.4.200",
+            "fileVersion": "5.1.4.200"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ModelLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SqlSugar/5.1.4.200": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Cgj7hge5kkue6C6VhTj7HB4B6jLEdA+CsxF/gdwG0LtDSBFfKI6aI1rk3X+EwCecWqmfHY7EHOLyPY1lW1sOCA==",
+      "path": "sqlsugar/5.1.4.200",
+      "hashPath": "sqlsugar.5.1.4.200.nupkg.sha512"
+    }
+  }
+}

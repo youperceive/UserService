@@ -1,0 +1,13 @@
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\bin\Debug\net9.0\ModelLibrary.deps.json
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\bin\Debug\net9.0\ModelLibrary.dll
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\bin\Debug\net9.0\ModelLibrary.pdb
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net9.0\ModelLibrary.csproj.AssemblyReference.cache
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net9.0\ModelLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net9.0\ModelLibrary.AssemblyInfoInputs.cache
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net9.0\ModelLibrary.AssemblyInfo.cs
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net9.0\ModelLibrary.csproj.CoreCompileInputs.cache
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net9.0\ModelLibrary.sourcelink.json
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net9.0\ModelLibrary.dll
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net9.0\refint\ModelLibrary.dll
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net9.0\ModelLibrary.pdb
+D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net9.0\ref\ModelLibrary.dll
