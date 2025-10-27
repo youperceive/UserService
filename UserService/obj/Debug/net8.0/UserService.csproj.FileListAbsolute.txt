@@ -39,3 +39,7 @@ D:\SourceCode\CSharpProject\WebAPI\UserService\UserService\obj\Debug\net8.0\refi
 D:\SourceCode\CSharpProject\WebAPI\UserService\UserService\obj\Debug\net8.0\UserService.pdb
 D:\SourceCode\CSharpProject\WebAPI\UserService\UserService\obj\Debug\net8.0\UserService.genruntimeconfig.cache
 D:\SourceCode\CSharpProject\WebAPI\UserService\UserService\obj\Debug\net8.0\ref\UserService.dll
+D:\SourceCode\CSharpProject\WebAPI\UserService\UserService\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\SourceCode\CSharpProject\WebAPI\UserService\UserService\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\SourceCode\CSharpProject\WebAPI\UserService\UserService\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\SourceCode\CSharpProject\WebAPI\UserService\UserService\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json

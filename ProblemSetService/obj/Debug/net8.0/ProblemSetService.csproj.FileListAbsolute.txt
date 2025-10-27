@@ -50,3 +50,4 @@ D:\SourceCode\CSharpProject\WebAPI\UserService\ProblemSetService\obj\Debug\net8.
 D:\SourceCode\CSharpProject\WebAPI\UserService\ProblemSetService\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 D:\SourceCode\CSharpProject\WebAPI\UserService\ProblemSetService\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
 D:\SourceCode\CSharpProject\WebAPI\UserService\ProblemSetService\obj\Debug\net8.0\swae.build.ex.cache
+D:\SourceCode\CSharpProject\WebAPI\UserService\ProblemSetService\bin\Debug\net8.0\Data\progressData.json

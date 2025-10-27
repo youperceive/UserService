@@ -17,4 +17,9 @@
         <ProjectReference Include="..\ModelLibrary\ModelLibrary.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="MockUserRepository.cs" />
+      <Compile Remove="MockRedisService.cs" />
+    </ItemGroup>
+
 </Project>

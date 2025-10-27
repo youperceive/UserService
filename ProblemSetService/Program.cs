@@ -93,7 +93,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 // 端口设置
-app.Urls.Add("http://localhost:5170");
-app.Urls.Add("https://localhost:7170");
+app.Urls.Add("http://localhost:5171");
+app.Urls.Add("https://localhost:7171");
 
 app.Run();

@@ -7,7 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Logging.AddConsole();
 
 // 注册服务
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        // 配置camelCase命名策略，与前端保持一致
+        options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+    });
 builder.Services.AddEndpointsApiExplorer();
 
 // CORS配置
