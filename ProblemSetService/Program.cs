@@ -7,17 +7,45 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Logging.AddConsole();
 
 // 注册服务
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        // 配置camelCase命名策略，与前端保持一致
+        options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+    });
 builder.Services.AddEndpointsApiExplorer();
 
-// CORS配置
+// CORS配置 - 允许前端访问
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader();
+        policy.SetIsOriginAllowed(origin =>
+        {
+            // 允许localhost和127.0.0.1
+            if (origin.Contains("localhost") || origin.Contains("127.0.0.1"))
+                return true;
+            
+            // 允许局域网访问（192.168.x.x, 10.x.x.x, 172.16-31.x.x）
+            var uri = new Uri(origin);
+            var host = uri.Host;
+            if (host.StartsWith("192.168.") || host.StartsWith("10."))
+                return true;
+            if (host.StartsWith("172."))
+            {
+                var parts = host.Split('.');
+                if (parts.Length >= 2 && int.TryParse(parts[1], out var second))
+                {
+                    if (second >= 16 && second <= 31)
+                        return true;
+                }
+            }
+                
+            return false;
+        })
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials();
     });
 });
 

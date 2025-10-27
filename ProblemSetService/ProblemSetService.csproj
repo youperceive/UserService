@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Docker.DotNet" Version="3.125.15" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
         <PackageReference Include="Pipelines.Sockets.Unofficial" Version="2.2.8" />
@@ -17,8 +18,16 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\Desktop\InitialThinkJudgeMachine\JudgeMachine\JudgeMachine.csproj" />
       <ProjectReference Include="..\ModelLibrary\ModelLibrary.csproj" />
       <ProjectReference Include="..\UserService\UserService.csproj" />
+      <ProjectReference Include="..\..\Desktop\InitialThinkJudgeMachine\JudgeMachine\JudgeMachine.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Data\Questions.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

@@ -1,0 +1,2317 @@
+[
+  {
+    "id": 1,
+    "title": "两数之和",
+    "description": "<p style=\"text-align:start;\">给定两个整数 a 和 b，请输出它们的和。</p>",
+    "input": "<p style=\"text-align:start;\">输入两个整数。</p>",
+    "output": "<p style=\"text-align:start;\">输出它们的和。</p>",
+    "limit": "<p style=\"text-align:left;\">时间限制：C/C++/Rust/Pascal 1秒，其他语言2秒</p><p style=\"text-align:left;\">空间限制：C/C++/Rust/Pascal 256 M，其他语言512 M</p>",
+    "difficulty": "easy",
+    "tags": [
+      "加法;var(--color-text-1);rgb(var(--gray-5))",
+      "基础数学;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 1",
+        "output": "2",
+        "explanation": "1+1=2"
+      },
+      {
+        "input": "-1 1",
+        "output": "0",
+        "explanation": "-1+1=0"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "反转链表",
+    "description": "<p style=\"text-align:start;\">给定一个单链表的头节点 head，请将链表反转并返回新的头节点。</p>",
+    "input": "<p style=\"text-align:start;\">输入链表节点值（空格分隔），例如 1 2 3 4</p>",
+    "output": "<p style=\"text-align:start;\">输出反转后的链表节点值（空格分隔）</p>",
+    "limit": "<p style=\"text-align:left;\">时间限制：C/C++/Rust/Pascal 1秒，其他语言2秒</p><p style=\"text-align:left;\">空间限制：C/C++/Rust/Pascal 256 M，其他语言512 M</p>",
+    "difficulty": "easy",
+    "tags": [
+      "链表;var(--color-text-1);rgb(var(--gray-5))",
+      "指针操作;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 4",
+        "output": "4 3 2 1",
+        "explanation": "链表 1->2->3->4 反转为 4->3->2->1"
+      },
+      {
+        "input": "5 6 7",
+        "output": "7 6 5",
+        "explanation": "链表 5->6->7 反转为 7->6->5"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "最长回文子串",
+    "description": "<p style=\"text-align:start;\">给定一个字符串 s，请找到其中最长的回文子串。</p>",
+    "input": "<p style=\"text-align:start;\">输入一个字符串，长度范围 [1, 1000]</p>",
+    "output": "<p style=\"text-align:start;\">输出最长回文子串</p>",
+    "limit": "<p style=\"text-align:left;\">时间限制：C/C++/Rust/Pascal 1秒，其他语言2秒</p><p style=\"text-align:left;\">空间限制：C/C++/Rust/Pascal 256 M，其他语言512 M</p>",
+    "difficulty": "normal",
+    "tags": [
+      "字符串;var(--color-text-1);rgb(var(--gray-5))",
+      "回文;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "babad",
+        "output": "bab",
+        "explanation": "最长回文子串为 'bab' 或 'aba'"
+      },
+      {
+        "input": "cbbd",
+        "output": "bb",
+        "explanation": "最长回文子串为 'bb'"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "数组求和",
+    "description": "<p style=\"text-align:start;\">实现一个函数解决 数组求和 问题。</p>",
+    "input": "<p style=\"text-align:start;\">根据题意输入相应数据。</p>",
+    "output": "<p style=\"text-align:start;\">输出结果。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "求和;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 4",
+        "output": "10",
+        "explanation": "数组元素求和为10"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "找最大值",
+    "description": "<p style=\"text-align:start;\">实现一个函数解决 找最大值 问题。</p>",
+    "input": "<p style=\"text-align:start;\">输入若干整数。</p>",
+    "output": "<p style=\"text-align:start;\">输出其中的最大值。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "最大值;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "5 1 9 3",
+        "output": "9",
+        "explanation": "最大值为9"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "统计字符",
+    "description": "<p style=\"text-align:start;\">实现一个函数解决 统计字符 问题。</p>",
+    "input": "<p style=\"text-align:start;\">输入一个字符串。</p>",
+    "output": "<p style=\"text-align:start;\">输出字符数量。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "字符串;var(--color-text-1);rgb(var(--gray-5))",
+      "计数;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "hello",
+        "output": "5",
+        "explanation": "字符串长度为5"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "字符串翻转",
+    "description": "<p style=\"text-align:start;\">实现一个函数解决 字符串翻转 问题。</p>",
+    "input": "<p style=\"text-align:start;\">输入一个字符串。</p>",
+    "output": "<p style=\"text-align:start;\">输出反转后的字符串。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "字符串;var(--color-text-1);rgb(var(--gray-5))",
+      "翻转;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "abc",
+        "output": "cba",
+        "explanation": "反转字符串"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "矩阵转置",
+    "description": "<p style=\"text-align:start;\">实现一个函数解决 矩阵转置 问题。</p>",
+    "input": "<p style=\"text-align:start;\">输入一个矩阵。</p>",
+    "output": "<p style=\"text-align:start;\">输出其转置矩阵。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "矩阵;var(--color-text-1);rgb(var(--gray-5))",
+      "转置;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2;3 4",
+        "output": "1 3;2 4",
+        "explanation": "矩阵转置"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "判断质数",
+    "description": "<p style=\"text-align:start;\">实现一个函数解决 判断质数 问题。</p>",
+    "input": "<p style=\"text-align:start;\">输入一个整数。</p>",
+    "output": "<p style=\"text-align:start;\">输出是否为质数。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "数学;var(--color-text-1);rgb(var(--gray-5))",
+      "质数;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "7",
+        "output": "true",
+        "explanation": "7是质数"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "冒泡排序",
+    "description": "<p style=\"text-align:start;\">实现冒泡排序。</p>",
+    "input": "<p style=\"text-align:start;\">输入一组整数。</p>",
+    "output": "<p style=\"text-align:start;\">输出排序后的整数序列。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "排序;var(--color-text-1);rgb(var(--gray-5))",
+      "冒泡排序;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "3 1 2",
+        "output": "1 2 3",
+        "explanation": "冒泡排序结果"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "选择排序",
+    "description": "<p style=\"text-align:start;\">实现选择排序。</p>",
+    "input": "<p style=\"text-align:start;\">输入一组整数。</p>",
+    "output": "<p style=\"text-align:start;\">输出排序后的整数序列。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "排序;var(--color-text-1);rgb(var(--gray-5))",
+      "选择排序;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "4 2 1 3",
+        "output": "1 2 3 4",
+        "explanation": "选择排序结果"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "判断回文数",
+    "description": "<p style=\"text-align:start;\">判断一个整数是否为回文数。</p>",
+    "input": "<p style=\"text-align:start;\">输入一个整数。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：128MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "数学;var(--color-text-1);rgb(var(--gray-5))",
+      "回文;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "121",
+        "output": "true",
+        "explanation": "121是回文数"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "二分查找",
+    "description": "<p style=\"text-align:start;\">在有序数组中查找目标值，返回下标或-1。</p>",
+    "input": "<p style=\"text-align:start;\">输入一个有序数组和目标值。</p>",
+    "output": "<p style=\"text-align:start;\">输出目标值所在下标。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "二分查找;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 3 5 7 9;5",
+        "output": "2",
+        "explanation": "目标值5在下标2"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "合并两个有序数组",
+    "description": "<p style=\"text-align:start;\">将两个有序数组合并为一个有序数组。</p>",
+    "input": "<p style=\"text-align:start;\">输入两个有序数组。</p>",
+    "output": "<p style=\"text-align:start;\">输出合并后的数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "合并;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 3 5;2 4 6",
+        "output": "1 2 3 4 5 6",
+        "explanation": "合并后排序"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "链表中间节点",
+    "description": "<p style=\"text-align:start;\">找到链表的中间节点。</p>",
+    "input": "<p style=\"text-align:start;\">输入链表节点值（空格分隔）。</p>",
+    "output": "<p style=\"text-align:start;\">输出中间节点值。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "链表;var(--color-text-1);rgb(var(--gray-5))",
+      "快慢指针;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 4 5",
+        "output": "3",
+        "explanation": "中间节点为3"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "二叉树层序遍历",
+    "description": "<p style=\"text-align:start;\">实现二叉树层序遍历。</p>",
+    "input": "<p style=\"text-align:start;\">输入二叉树的层序表示。</p>",
+    "output": "<p style=\"text-align:start;\">输出层序遍历结果。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二叉树;var(--color-text-1);rgb(var(--brown-5))",
+      "队列;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 null 4",
+        "output": "1 2 3 4",
+        "explanation": "层序遍历结果"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "计算岛屿数量",
+    "description": "<p style=\"text-align:start;\">给定一个二维矩阵，计算岛屿数量。</p>",
+    "input": "<p style=\"text-align:start;\">输入由 0 和 1 组成的矩阵。</p>",
+    "output": "<p style=\"text-align:start;\">输出岛屿数量。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "矩阵;var(--color-text-1);rgb(var(--gray-5))",
+      "DFS;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "11110,11010,11000,00000",
+        "output": "1",
+        "explanation": "共1个岛屿"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "最短路径",
+    "description": "<p style=\"text-align:start;\">求图中两点的最短路径。</p>",
+    "input": "<p style=\"text-align:start;\">输入图的边和权重。</p>",
+    "output": "<p style=\"text-align:start;\">输出起点到终点的最短距离。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "图;var(--color-text-1);rgb(var(--gray-5))",
+      "Dijkstra;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "A-B:3,B-C:2,A-C:5",
+        "output": "5",
+        "explanation": "A→C最短距离为5"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "矩阵旋转",
+    "description": "<p style=\"text-align:start;\">将 N×N 矩阵顺时针旋转 90 度。</p>",
+    "input": "<p style=\"text-align:start;\">输入一个矩阵。</p>",
+    "output": "<p style=\"text-align:start;\">输出旋转后的矩阵。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "矩阵;var(--color-text-1);rgb(var(--gray-5))",
+      "旋转;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2;3 4",
+        "output": "3 1;4 2",
+        "explanation": "矩阵旋转90度"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "字符串反转",
+    "description": "<p style=\"text-align:start;\">实现字符串反转。</p>",
+    "input": "<p style=\"text-align:start;\">输入一个字符串。</p>",
+    "output": "<p style=\"text-align:start;\">输出反转后的字符串。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：128MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "字符串;var(--color-text-1);rgb(var(--gray-5))",
+      "翻转;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "hello",
+        "output": "olleh",
+        "explanation": "字符串反转"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "字符串长度",
+    "description": "<p style=\"text-align:start;\">计算输入字符串的长度。</p>",
+    "input": "<p style=\"text-align:start;\">输入一个字符串。</p>",
+    "output": "<p style=\"text-align:start;\">输出字符串长度。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：128MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "字符串;var(--color-text-1);rgb(var(--gray-5))",
+      "长度;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "hello",
+        "output": "5",
+        "explanation": "字符串长度为5"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "统计单词频率",
+    "description": "<p style=\"text-align:start;\">统计句子中每个单词出现的次数。</p>",
+    "input": "<p style=\"text-align:start;\">输入一句英文句子。</p>",
+    "output": "<p style=\"text-align:start;\">输出每个单词及出现次数。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "字符串;var(--color-text-1);rgb(var(--gray-5))",
+      "哈希表;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "a b a c a b",
+        "output": "a:3 b:2 c:1",
+        "explanation": "统计单词频率"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "数组平均值",
+    "description": "<p style=\"text-align:start;\">计算数组的平均值，保留两位小数。</p>",
+    "input": "<p style=\"text-align:start;\">输入若干整数。</p>",
+    "output": "<p style=\"text-align:start;\">输出平均值。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：128MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "数学;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 4 5",
+        "output": "3.00",
+        "explanation": "平均值为3"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "最长公共前缀",
+    "description": "<p style=\"text-align:start;\">求若干字符串的最长公共前缀。</p>",
+    "input": "<p style=\"text-align:start;\">输入若干字符串。</p>",
+    "output": "<p style=\"text-align:start;\">输出最长公共前缀。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "字符串;var(--color-text-1);rgb(var(--gray-5))",
+      "前缀;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "flower flow flight",
+        "output": "fl",
+        "explanation": "最长公共前缀为fl"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "数组两数之和",
+    "description": "<p style=\"text-align:start;\">在数组中找到两个数，使它们的和等于目标值。</p>",
+    "input": "<p style=\"text-align:start;\">输入数组和目标值。</p>",
+    "output": "<p style=\"text-align:start;\">输出两个数的下标。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "双指针;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "2 7 11 15;9",
+        "output": "0 1",
+        "explanation": "2 + 7 = 9"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "合并区间",
+    "description": "<p style=\"text-align:start;\">给定一组区间，合并所有重叠的区间。</p>",
+    "input": "<p style=\"text-align:start;\">输入若干区间。</p>",
+    "output": "<p style=\"text-align:start;\">输出合并后的区间集合。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "排序;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1,3;2,6;8,10",
+        "output": "1,6;8,10",
+        "explanation": "合并重叠区间"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "括号匹配",
+    "description": "<p style=\"text-align:start;\">判断括号字符串是否有效。</p>",
+    "input": "<p style=\"text-align:start;\">输入仅包含括号的字符串。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：128MB</p>",
+    "difficulty": "easy",
+    "tags": [
+      "栈;var(--color-text-1);rgb(var(--gray-5))",
+      "括号匹配;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "()[]{}",
+        "output": "true",
+        "explanation": "括号匹配正确"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "数组旋转",
+    "description": "<p style=\"text-align:start;\">将数组向右旋转 k 步。</p>",
+    "input": "<p style=\"text-align:start;\">输入数组和旋转步数。</p>",
+    "output": "<p style=\"text-align:start;\">输出旋转后的数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "旋转;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 4 5 6 7;3",
+        "output": "5 6 7 1 2 3 4",
+        "explanation": "右旋3步"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "爬楼梯",
+    "description": "<p style=\"text-align:start;\">每次可以爬1或2阶台阶，计算到达顶部的不同方式数。</p>",
+    "input": "<p style=\"text-align:start;\">输入台阶总数 n。</p>",
+    "output": "<p style=\"text-align:start;\">输出不同的爬法数量。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "数学;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "3",
+        "output": "3",
+        "explanation": "共3种爬法"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "买卖股票的最佳时机",
+    "description": "<p style=\"text-align:start;\">给定每天的股票价格，求最大利润。</p>",
+    "input": "<p style=\"text-align:start;\">输入每日价格序列。</p>",
+    "output": "<p style=\"text-align:start;\">输出最大利润。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "贪心算法;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "7 1 5 3 6 4",
+        "output": "5",
+        "explanation": "低买高卖获得最大利润5"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "title": "二叉树前序遍历",
+    "description": "<p style=\"text-align:start;\">实现二叉树的前序遍历。</p>",
+    "input": "<p style=\"text-align:start;\">输入二叉树的层序表示。</p>",
+    "output": "<p style=\"text-align:start;\">输出前序遍历序列。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二叉树;var(--color-text-1);rgb(var(--brown-5))",
+      "递归;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 null 4",
+        "output": "1 2 4 3",
+        "explanation": "前序遍历结果"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "title": "二叉树中序遍历",
+    "description": "<p style=\"text-align:start;\">实现二叉树的中序遍历。</p>",
+    "input": "<p style=\"text-align:start;\">输入二叉树的层序表示。</p>",
+    "output": "<p style=\"text-align:start;\">输出中序遍历序列。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二叉树;var(--color-text-1);rgb(var(--brown-5))",
+      "递归;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 null 4",
+        "output": "2 4 1 3",
+        "explanation": "中序遍历结果"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "title": "二叉树后序遍历",
+    "description": "<p style=\"text-align:start;\">实现二叉树的后序遍历。</p>",
+    "input": "<p style=\"text-align:start;\">输入二叉树的层序表示。</p>",
+    "output": "<p style=\"text-align:start;\">输出后序遍历序列。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二叉树;var(--color-text-1);rgb(var(--brown-5))",
+      "递归;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 null 4",
+        "output": "4 2 3 1",
+        "explanation": "后序遍历结果"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "title": "二叉树最大深度",
+    "description": "<p style=\"text-align:start;\">计算二叉树的最大深度。</p>",
+    "input": "<p style=\"text-align:start;\">输入二叉树的层序表示。</p>",
+    "output": "<p style=\"text-align:start;\">输出最大深度。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二叉树;var(--color-text-1);rgb(var(--brown-5))",
+      "深度优先搜索;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "3 9 20 null null 15 7",
+        "output": "3",
+        "explanation": "最大深度为3"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "title": "最小栈",
+    "description": "<p style=\"text-align:start;\">设计一个支持 push, pop, top 操作，并能在常数时间内检索最小元素的栈。</p>",
+    "input": "<p style=\"text-align:start;\">输入操作序列。</p>",
+    "output": "<p style=\"text-align:start;\">输出每次操作后的结果。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：128MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "栈;var(--color-text-1);rgb(var(--gray-5))",
+      "设计;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "push 2,push 0,push 3,getMin,pop,getMin",
+        "output": "0 0",
+        "explanation": "最小值分别为0 0"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "title": "滑动窗口最大值",
+    "description": "<p style=\"text-align:start;\">给定一个数组和窗口大小 k，输出每个窗口的最大值。</p>",
+    "input": "<p style=\"text-align:start;\">输入数组和整数 k。</p>",
+    "output": "<p style=\"text-align:start;\">输出滑动窗口最大值序列。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "双端队列;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 3 -1 -3 5 3 6 7;3",
+        "output": "3 3 5 5 6 7",
+        "explanation": "滑动窗口最大值"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "title": "二叉搜索树插入",
+    "description": "<p style=\"text-align:start;\">在二叉搜索树中插入一个节点，保持 BST 特性。</p>",
+    "input": "<p style=\"text-align:start;\">输入 BST 和待插入值。</p>",
+    "output": "<p style=\"text-align:start;\">输出插入后的 BST 层序序列。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二叉树;var(--color-text-1);rgb(var(--brown-5))",
+      "二叉搜索树;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "4 2 7 1 3;5",
+        "output": "4 2 7 1 3 5",
+        "explanation": "插入5后的BST"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "title": "搜索二维矩阵",
+    "description": "<p style=\"text-align:start;\">在每行每列均递增的二维矩阵中搜索目标值。</p>",
+    "input": "<p style=\"text-align:start;\">输入矩阵和目标值。</p>",
+    "output": "<p style=\"text-align:start;\">输出是否存在目标值。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "矩阵;var(--color-text-1);rgb(var(--gray-5))",
+      "搜索;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 4 7 11 15;1 5 8 12 19;target=5",
+        "output": "true",
+        "explanation": "目标值存在"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "title": "最大子序和",
+    "description": "<p style=\"text-align:start;\">给定一个整数数组，找到一个具有最大和的连续子数组。</p>",
+    "input": "<p style=\"text-align:start;\">输入数组。</p>",
+    "output": "<p style=\"text-align:start;\">输出最大和。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "-2 1 -3 4 -1 2 1 -5 4",
+        "output": "6",
+        "explanation": "最大子序和为6"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "title": "有效数独",
+    "description": "<p style=\"text-align:start;\">判断一个9x9的数独是否有效。</p>",
+    "input": "<p style=\"text-align:start;\">输入9x9字符矩阵。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "哈希表;var(--color-text-1);rgb(var(--gray-5))",
+      "矩阵;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "5 3 . . 7 . . . .",
+        "output": "true",
+        "explanation": "数独有效"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "title": "环形链表",
+    "description": "<p style=\"text-align:start;\">判断链表中是否有环。</p>",
+    "input": "<p style=\"text-align:start;\">输入链表节点值和环的位置。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "链表;var(--color-text-1);rgb(var(--gray-5))",
+      "快慢指针;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "3 2 0 -4;pos=1",
+        "output": "true",
+        "explanation": "链表有环"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "title": "两两交换链表中的节点",
+    "description": "<p style=\"text-align:start;\">交换链表中相邻节点。</p>",
+    "input": "<p style=\"text-align:start;\">输入链表节点值。</p>",
+    "output": "<p style=\"text-align:start;\">输出交换后的链表节点值。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "链表;var(--color-text-1);rgb(var(--gray-5))",
+      "指针操作;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 4",
+        "output": "2 1 4 3",
+        "explanation": "相邻节点交换"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "title": "有效括号序列生成",
+    "description": "<p style=\"text-align:start;\">生成所有可能的 n 对有效括号序列。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数 n。</p>",
+    "output": "<p style=\"text-align:start;\">输出所有有效括号组合。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "回溯;var(--color-text-1);rgb(var(--gray-5))",
+      "栈;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "3",
+        "output": "((())), (()()), (())(), ()(()), ()()()",
+        "explanation": "n=3的所有有效组合"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "title": "合并 k 个排序链表",
+    "description": "<p style=\"text-align:start;\">合并 k 个升序链表为一个排序链表。</p>",
+    "input": "<p style=\"text-align:start;\">输入 k 个链表节点值。</p>",
+    "output": "<p style=\"text-align:start;\">输出合并后的链表节点值。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "链表;var(--color-text-1);rgb(var(--gray-5))",
+      "堆;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 4 5;1 3 4;2 6",
+        "output": "1 1 2 3 4 4 5 6",
+        "explanation": "合并后排序链表"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "title": "课程表",
+    "description": "<p style=\"text-align:start;\">判断是否可以完成所有课程。</p>",
+    "input": "<p style=\"text-align:start;\">输入课程数和先修课程关系。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "图;var(--color-text-1);rgb(var(--gray-5))",
+      "拓扑排序;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "2;[[1,0]]",
+        "output": "true",
+        "explanation": "课程可以完成"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "title": "岛屿的周长",
+    "description": "<p style=\"text-align:start;\">计算二维网格中岛屿的周长。</p>",
+    "input": "<p style=\"text-align:start;\">输入由 0 和 1 组成的矩阵。</p>",
+    "output": "<p style=\"text-align:start;\">输出周长。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "矩阵;var(--color-text-1);rgb(var(--gray-5))",
+      "DFS;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "0 1 0 0;1 1 1 0;0 1 0 0;1 1 0 0",
+        "output": "16",
+        "explanation": "岛屿周长为16"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "title": "旋转数组查找",
+    "description": "<p style=\"text-align:start;\">在旋转排序数组中搜索目标值。</p>",
+    "input": "<p style=\"text-align:start;\">输入旋转数组和目标值。</p>",
+    "output": "<p style=\"text-align:start;\">输出目标值下标或-1。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "二分查找;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "4 5 6 7 0 1 2;0",
+        "output": "4",
+        "explanation": "目标值0下标为4"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "title": "爬楼梯 II",
+    "description": "<p style=\"text-align:start;\">求不同方式爬到第 n 阶的路径，并输出所有路径。</p>",
+    "input": "<p style=\"text-align:start;\">输入台阶总数 n。</p>",
+    "output": "<p style=\"text-align:start;\">输出所有不同路径序列。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "回溯;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "3",
+        "output": "1 1 1, 1 2, 2 1",
+        "explanation": "所有不同路径"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "title": "LRU 缓存机制",
+    "description": "<p style=\"text-align:start;\">设计并实现 LRU 缓存。</p>",
+    "input": "<p style=\"text-align:start;\">输入操作序列和缓存容量。</p>",
+    "output": "<p style=\"text-align:start;\">输出每次 get 操作结果。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "设计;var(--color-text-1);rgb(var(--gray-5))",
+      "哈希表;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "LRUCache 2,put 1 1,put 2 2,get 1,put 3 3,get 2",
+        "output": "1 -1",
+        "explanation": "缓存操作结果"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "title": "单词搜索",
+    "description": "<p style=\"text-align:start;\">在二维字符网格中搜索给定单词是否存在。</p>",
+    "input": "<p style=\"text-align:start;\">输入字符矩阵和单词。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "矩阵;var(--color-text-1);rgb(var(--gray-5))",
+      "回溯;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "A B C E;S F C S;A D E E;word=ABCCED",
+        "output": "true",
+        "explanation": "单词存在"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "title": "买卖股票的最佳时机 II",
+    "description": "<p style=\"text-align:start;\">允许多次买卖，计算最大利润。</p>",
+    "input": "<p style=\"text-align:start;\">输入每日股票价格序列。</p>",
+    "output": "<p style=\"text-align:start;\">输出最大利润。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "贪心算法;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "7 1 5 3 6 4",
+        "output": "7",
+        "explanation": "多次买卖最大利润7"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "title": "最小路径和",
+    "description": "<p style=\"text-align:start;\">给定一个 m x n 的网格，求从左上角到右下角的最小路径和。</p>",
+    "input": "<p style=\"text-align:start;\">输入二维网格。</p>",
+    "output": "<p style=\"text-align:start;\">输出最小路径和。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "矩阵;var(--color-text-1);rgb(var(--gray-5))",
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 3 1;1 5 1;4 2 1",
+        "output": "7",
+        "explanation": "最小路径和7"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "title": "不同路径",
+    "description": "<p style=\"text-align:start;\">计算从左上角到右下角的不同路径数，只能向下或向右走。</p>",
+    "input": "<p style=\"text-align:start;\">输入网格的 m 和 n。</p>",
+    "output": "<p style=\"text-align:start;\">输出不同路径数。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "数学;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "3 7",
+        "output": "28",
+        "explanation": "3x7网格有28条路径"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "title": "最长递增子序列",
+    "description": "<p style=\"text-align:start;\">求数组的最长严格递增子序列长度。</p>",
+    "input": "<p style=\"text-align:start;\">输入数组。</p>",
+    "output": "<p style=\"text-align:start;\">输出最长递增子序列长度。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "10 9 2 5 3 7 101 18",
+        "output": "4",
+        "explanation": "最长递增子序列长度为4"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "title": "打家劫舍",
+    "description": "<p style=\"text-align:start;\">不允许相邻偷窃，求最大偷窃金额。</p>",
+    "input": "<p style=\"text-align:start;\">输入非负整数数组表示房屋金额。</p>",
+    "output": "<p style=\"text-align:start;\">输出最大金额。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "数组;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 1",
+        "output": "4",
+        "explanation": "偷1+3=4"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "title": "打家劫舍 II",
+    "description": "<p style=\"text-align:start;\">环形房屋，不允许相邻偷窃，求最大偷窃金额。</p>",
+    "input": "<p style=\"text-align:start;\">输入非负整数数组表示房屋金额。</p>",
+    "output": "<p style=\"text-align:start;\">输出最大金额。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "数组;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "2 3 2",
+        "output": "3",
+        "explanation": "选择偷3"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "title": "单词拆分",
+    "description": "<p style=\"text-align:start;\">判断字符串能否被拆分成字典中的单词。</p>",
+    "input": "<p style=\"text-align:start;\">输入字符串和字典。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "字符串;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "leetcode;['leet','code']",
+        "output": "true",
+        "explanation": "可以拆分"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "title": "单词拆分 II",
+    "description": "<p style=\"text-align:start;\">输出字符串所有可能的拆分成字典单词的组合。</p>",
+    "input": "<p style=\"text-align:start;\">输入字符串和字典。</p>",
+    "output": "<p style=\"text-align:start;\">输出所有组合。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "回溯;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "catsanddog;['cat','cats','and','sand','dog']",
+        "output": "cats and dog, cat sand dog",
+        "explanation": "所有拆分组合"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "title": "岛屿数量 II",
+    "description": "<p style=\"text-align:start;\">动态添加陆地，统计岛屿数量变化。</p>",
+    "input": "<p style=\"text-align:start;\">输入网格大小和陆地添加操作序列。</p>",
+    "output": "<p style=\"text-align:start;\">输出每次添加后的岛屿数量。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "并查集;var(--color-text-1);rgb(var(--gray-5))",
+      "矩阵;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "3 3;[[0,0],[0,1],[1,2],[2,1]]",
+        "output": "1, 1, 2, 3",
+        "explanation": "岛屿数量随添加变化"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "title": "最近公共祖先",
+    "description": "<p style=\"text-align:start;\">求二叉树中两个节点的最近公共祖先。</p>",
+    "input": "<p style=\"text-align:start;\">输入二叉树和两个节点值。</p>",
+    "output": "<p style=\"text-align:start;\">输出最近公共祖先值。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "二叉树;var(--color-text-1);rgb(var(--brown-5))",
+      "递归;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "3 5 1 6 2 0 8 7 4;5 1",
+        "output": "3",
+        "explanation": "最近公共祖先为3"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "title": "单调栈-每日温度",
+    "description": "<p style=\"text-align:start;\">给定每日温度，计算需要几天后温度才会升高。</p>",
+    "input": "<p style=\"text-align:start;\">输入温度数组。</p>",
+    "output": "<p style=\"text-align:start;\">输出等待天数数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "单调栈;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "73 74 75 71 69 72 76 73",
+        "output": "1 1 4 2 1 1 0 0",
+        "explanation": "每一天等待升温天数"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "title": "直方图最大矩形",
+    "description": "<p style=\"text-align:start;\">给定直方图，求能形成的最大矩形面积。</p>",
+    "input": "<p style=\"text-align:start;\">输入高度数组。</p>",
+    "output": "<p style=\"text-align:start;\">输出最大矩形面积。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "栈;var(--color-text-1);rgb(var(--gray-5))",
+      "单调栈;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "2 1 5 6 2 3",
+        "output": "10",
+        "explanation": "最大矩形面积为10"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "title": "二叉树层序遍历",
+    "description": "<p style=\"text-align:start;\">返回二叉树每层节点值。</p>",
+    "input": "<p style=\"text-align:start;\">输入二叉树层序表示。</p>",
+    "output": "<p style=\"text-align:start;\">输出每层节点列表。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二叉树;var(--color-text-1);rgb(var(--brown-5))",
+      "队列;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "3 9 20 null null 15 7",
+        "output": "[[3],[9,20],[15,7]]",
+        "explanation": "每层节点"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "title": "填充每个节点的下一个右侧节点指针",
+    "description": "<p style=\"text-align:start;\">填充二叉树每个节点的 next 指针，指向同层右侧节点。</p>",
+    "input": "<p style=\"text-align:start;\">输入完美二叉树。</p>",
+    "output": "<p style=\"text-align:start;\">输出填充后的树层序值和next信息。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "二叉树;var(--color-text-1);rgb(var(--brown-5))",
+      "指针操作;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 4 5 6 7",
+        "output": "1->null 2->3 3->null 4->5 5->6 6->7 7->null",
+        "explanation": "填充next指针"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "title": "合并区间 II",
+    "description": "<p style=\"text-align:start;\">插入新区间并合并已有区间。</p>",
+    "input": "<p style=\"text-align:start;\">输入已有区间和新插入区间。</p>",
+    "output": "<p style=\"text-align:start;\">输出合并后的区间。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "排序;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1,3;6,9;2,5",
+        "output": "1,5;6,9",
+        "explanation": "插入后合并"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "title": "零钱兑换",
+    "description": "<p style=\"text-align:start;\">给定零钱种类，计算组成金额的最少硬币数。</p>",
+    "input": "<p style=\"text-align:start;\">输入零钱数组和金额。</p>",
+    "output": "<p style=\"text-align:start;\">输出最少硬币数，无法组成返回-1。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "贪心;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "[1,2,5];11",
+        "output": "3",
+        "explanation": "5+5+1"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "title": "背包问题 0-1",
+    "description": "<p style=\"text-align:start;\">经典 0-1 背包问题。</p>",
+    "input": "<p style=\"text-align:start;\">输入物品重量、价值和背包容量。</p>",
+    "output": "<p style=\"text-align:start;\">输出最大价值。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "数组;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "weights=[1,2,3];values=[6,10,12];capacity=5",
+        "output": "22",
+        "explanation": "选择物品2和3"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "title": "编辑距离",
+    "description": "<p style=\"text-align:start;\">计算两个字符串的最小编辑距离。</p>",
+    "input": "<p style=\"text-align:start;\">输入两个字符串。</p>",
+    "output": "<p style=\"text-align:start;\">输出编辑距离。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "字符串;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "horse;ros",
+        "output": "3",
+        "explanation": "horse->ros: horse->ror->ros"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "title": "最长回文子序列",
+    "description": "<p style=\"text-align:start;\">求字符串的最长回文子序列长度。</p>",
+    "input": "<p style=\"text-align:start;\">输入字符串。</p>",
+    "output": "<p style=\"text-align:start;\">输出长度。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "字符串;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "bbbab",
+        "output": "4",
+        "explanation": "bbbb是最长回文子序列"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "title": "单词规律",
+    "description": "<p style=\"text-align:start;\">判断单词序列是否匹配给定模式。</p>",
+    "input": "<p style=\"text-align:start;\">输入模式字符串和单词序列。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "哈希表;var(--color-text-1);rgb(var(--gray-5))",
+      "字符串;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "abba;dog cat cat dog",
+        "output": "true",
+        "explanation": "模式匹配成功"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "title": "数组中重复的数字",
+    "description": "<p style=\"text-align:start;\">找出数组中任意一个重复的数字。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数数组，长度 n，数组元素在 0~n-1。</p>",
+    "output": "<p style=\"text-align:start;\">输出任意重复数字。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "哈希表;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "2 3 1 0 2 5",
+        "output": "2",
+        "explanation": "重复数字为2"
+      },
+      {
+        "input": "3 1 3 4 2",
+        "output": "3",
+        "explanation": "重复数字为3"
+      },
+      {
+        "input": "0 1 2 3 4 5 0",
+        "output": "0",
+        "explanation": "重复数字为0"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "title": "数组中所有重复数字",
+    "description": "<p style=\"text-align:start;\">找出数组中所有重复的数字。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数数组，长度 n，数组元素在 1~n。</p>",
+    "output": "<p style=\"text-align:start;\">输出所有重复数字列表。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "哈希表;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "4 3 2 7 8 2 3 1",
+        "output": "[2,3]",
+        "explanation": "重复数字为2和3"
+      },
+      {
+        "input": "1 1 2 2 3",
+        "output": "[1,2]",
+        "explanation": "重复数字为1和2"
+      },
+      {
+        "input": "5 4 3 2 1 1",
+        "output": "[1]",
+        "explanation": "重复数字为1"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "title": "滑动窗口平均值",
+    "description": "<p style=\"text-align:start;\">计算大小为 k 的滑动窗口平均值。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数数组和整数 k。</p>",
+    "output": "<p style=\"text-align:start;\">输出滑动窗口平均值数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "滑动窗口;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 3 2 6 4;3",
+        "output": "[2.0,3.6667,4.0]",
+        "explanation": "每个窗口的平均值"
+      },
+      {
+        "input": "5 5 5 5;2",
+        "output": "[5.0,5.0,5.0]",
+        "explanation": "每个窗口平均值为5"
+      },
+      {
+        "input": "1 2 3 4 5;1",
+        "output": "[1,2,3,4,5]",
+        "explanation": "窗口大小为1即原数组"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "title": "二叉树路径和",
+    "description": "<p style=\"text-align:start;\">判断是否存在从根节点到叶子节点的路径，路径和等于给定值。</p>",
+    "input": "<p style=\"text-align:start;\">输入二叉树和目标和。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二叉树;var(--color-text-1);rgb(var(--brown-5))",
+      "递归;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "5 4 8 11 null 13 4 7 2 null null null 1;22",
+        "output": "true",
+        "explanation": "5->4->11->2路径和为22"
+      },
+      {
+        "input": "1 2 3;5",
+        "output": "false",
+        "explanation": "没有路径和为5"
+      },
+      {
+        "input": "1 2;0",
+        "output": "false",
+        "explanation": "路径和不为0"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "title": "二叉树右视图",
+    "description": "<p style=\"text-align:start;\">返回二叉树从右侧看到的节点值。</p>",
+    "input": "<p style=\"text-align:start;\">输入二叉树。</p>",
+    "output": "<p style=\"text-align:start;\">输出右视图节点值数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二叉树;var(--color-text-1);rgb(var(--brown-5))",
+      "广度优先搜索;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 null 5 null 4",
+        "output": "[1,3,4]",
+        "explanation": "右视图节点值"
+      },
+      {
+        "input": "1 null 2 3",
+        "output": "[1,2,3]",
+        "explanation": "右视图节点值"
+      },
+      {
+        "input": "1 2 3 4 5 6 7",
+        "output": "[1,3,7]",
+        "explanation": "右视图节点值"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "title": "合并两个有序数组",
+    "description": "<p style=\"text-align:start;\">合并两个升序数组为一个升序数组。</p>",
+    "input": "<p style=\"text-align:start;\">输入两个数组。</p>",
+    "output": "<p style=\"text-align:start;\">输出合并后的数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "排序;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3;2 5 6",
+        "output": "[1,2,2,3,5,6]",
+        "explanation": "合并后升序数组"
+      },
+      {
+        "input": "0;0",
+        "output": "[0,0]",
+        "explanation": "合并后数组"
+      },
+      {
+        "input": "1 3 5;2 4 6",
+        "output": "[1,2,3,4,5,6]",
+        "explanation": "合并后数组"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "title": "搜索旋转排序数组 II",
+    "description": "<p style=\"text-align:start;\">在旋转排序数组中搜索目标值，数组可能有重复。</p>",
+    "input": "<p style=\"text-align:start;\">输入旋转数组和目标值。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "二分查找;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "2 5 6 0 0 1 2;0",
+        "output": "true",
+        "explanation": "目标值存在"
+      },
+      {
+        "input": "2 5 6 0 0 1 2;3",
+        "output": "false",
+        "explanation": "目标值不存在"
+      },
+      {
+        "input": "1 1 3 1;3",
+        "output": "true",
+        "explanation": "目标值存在"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "title": "二叉搜索树中第 K 小的元素",
+    "description": "<p style=\"text-align:start;\">返回 BST 中第 k 小的元素。</p>",
+    "input": "<p style=\"text-align:start;\">输入 BST 和整数 k。</p>",
+    "output": "<p style=\"text-align:start;\">输出第 k 小的元素值。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二叉搜索树;var(--color-text-1);rgb(var(--brown-5))",
+      "中序遍历;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "3 1 4 null 2;1",
+        "output": "1",
+        "explanation": "第1小元素为1"
+      },
+      {
+        "input": "5 3 6 2 4 1;3",
+        "output": "3",
+        "explanation": "第3小元素为3"
+      },
+      {
+        "input": "2 1 3;2",
+        "output": "2",
+        "explanation": "第2小元素为2"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "title": "最大连续1的个数",
+    "description": "<p style=\"text-align:start;\">求二进制数组中最大连续1的个数。</p>",
+    "input": "<p style=\"text-align:start;\">输入二进制数组。</p>",
+    "output": "<p style=\"text-align:start;\">输出最大连续1的长度。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "计数;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 1 0 1 1 1",
+        "output": "3",
+        "explanation": "最大连续1为3"
+      },
+      {
+        "input": "1 0 1 1 0 1",
+        "output": "2",
+        "explanation": "最大连续1为2"
+      },
+      {
+        "input": "0 0 0 0",
+        "output": "0",
+        "explanation": "没有1"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "title": "最小窗口子串",
+    "description": "<p style=\"text-align:start;\">在字符串 s 中找到包含 t 所有字符的最小子串。</p>",
+    "input": "<p style=\"text-align:start;\">输入字符串 s 和 t。</p>",
+    "output": "<p style=\"text-align:start;\">输出最小子串，如果不存在返回空字符串。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "字符串;var(--color-text-1);rgb(var(--gray-5))",
+      "滑动窗口;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "ADOBECODEBANC;ABC",
+        "output": "BANC",
+        "explanation": "最小子串包含ABC"
+      },
+      {
+        "input": "a;aa",
+        "output": "",
+        "explanation": "无法包含所有字符"
+      },
+      {
+        "input": "aaflslflsldkalskaaa;aaa",
+        "output": "aaa",
+        "explanation": "最小子串为aaa"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "title": "括号生成",
+    "description": "<p style=\"text-align:start;\">生成所有可能的 n 对括号的有效组合。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数 n。</p>",
+    "output": "<p style=\"text-align:start;\">输出所有合法括号组合数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "回溯;var(--color-text-1);rgb(var(--gray-5))",
+      "字符串;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "3",
+        "output": "((())), (()()), (())(), ()(()), ()()()",
+        "explanation": "所有合法括号组合"
+      },
+      {
+        "input": "1",
+        "output": "()",
+        "explanation": "只有一对括号"
+      },
+      {
+        "input": "2",
+        "output": "(()), ()()",
+        "explanation": "两对括号的组合"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "title": "电话号码的字母组合",
+    "description": "<p style=\"text-align:start;\">给定数字字符串，返回可能的字母组合（对应电话键盘映射）。</p>",
+    "input": "<p style=\"text-align:start;\">输入数字字符串。</p>",
+    "output": "<p style=\"text-align:start;\">输出所有字母组合数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "回溯;var(--color-text-1);rgb(var(--gray-5))",
+      "字符串;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "23",
+        "output": "ad, ae, af, bd, be, bf, cd, ce, cf",
+        "explanation": "数字23对应的字母组合"
+      },
+      {
+        "input": "2",
+        "output": "a, b, c",
+        "explanation": "数字2对应的字母"
+      },
+      {
+        "input": "9",
+        "output": "w, x, y, z",
+        "explanation": "数字9对应的字母"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "title": "字符串全排列",
+    "description": "<p style=\"text-align:start;\">返回字符串所有字符的全排列。</p>",
+    "input": "<p style=\"text-align:start;\">输入字符串 s。</p>",
+    "output": "<p style=\"text-align:start;\">输出全排列数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "回溯;var(--color-text-1);rgb(var(--gray-5))",
+      "字符串;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "abc",
+        "output": "abc, acb, bac, bca, cab, cba",
+        "explanation": "所有全排列"
+      },
+      {
+        "input": "ab",
+        "output": "ab, ba",
+        "explanation": "两字符全排列"
+      },
+      {
+        "input": "a",
+        "output": "a",
+        "explanation": "单字符全排列"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "title": "环形数组的最大子数组和",
+    "description": "<p style=\"text-align:start;\">求环形数组的最大子数组和。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数数组 nums。</p>",
+    "output": "<p style=\"text-align:start;\">输出最大子数组和。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 -2 3 -2",
+        "output": "3",
+        "explanation": "最大子数组和为3"
+      },
+      {
+        "input": "5 -3 5",
+        "output": "10",
+        "explanation": "环形考虑最大和为10"
+      },
+      {
+        "input": "-3 -2 -3",
+        "output": "-2",
+        "explanation": "全部为负数，最大为-2"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "title": "接雨水",
+    "description": "<p style=\"text-align:start;\">计算柱状图能够接的雨水量。</p>",
+    "input": "<p style=\"text-align:start;\">输入柱高度数组。</p>",
+    "output": "<p style=\"text-align:start;\">输出接雨水总量。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "栈;var(--color-text-1);rgb(var(--gray-5))",
+      "双指针;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "0 1 0 2 1 0 1 3 2 1 2 1",
+        "output": "6",
+        "explanation": "能接6单位雨水"
+      },
+      {
+        "input": "4 2 0 3 2 5",
+        "output": "9",
+        "explanation": "能接9单位雨水"
+      },
+      {
+        "input": "2 0 2",
+        "output": "2",
+        "explanation": "能接2单位雨水"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "title": "最小绝对差",
+    "description": "<p style=\"text-align:start;\">找出数组中所有绝对差最小的数对。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数数组。</p>",
+    "output": "<p style=\"text-align:start;\">输出所有差最小的数对数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "数组;var(--color-text-1);rgb(var(--gray-5))",
+      "排序;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "4 2 1 3",
+        "output": "[[1,2],[2,3],[3,4]]",
+        "explanation": "最小差为1"
+      },
+      {
+        "input": "1 3 6 10 15",
+        "output": "[[1,3]]",
+        "explanation": "最小差为2"
+      },
+      {
+        "input": "1 1 2 3",
+        "output": "[[1,1],[1,2],[2,3]]",
+        "explanation": "最小差为0"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "title": "子集",
+    "description": "<p style=\"text-align:start;\">返回数组的所有子集（幂集）。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数数组。</p>",
+    "output": "<p style=\"text-align:start;\">输出所有子集数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "回溯;var(--color-text-1);rgb(var(--gray-5))",
+      "数组;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3",
+        "output": "[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]",
+        "explanation": "所有子集"
+      },
+      {
+        "input": "0",
+        "output": "[[],[0]]",
+        "explanation": "只有一个元素"
+      },
+      {
+        "input": "1 2",
+        "output": "[[],[1],[2],[1,2]]",
+        "explanation": "两元素子集"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "title": "子集 II",
+    "description": "<p style=\"text-align:start;\">数组可能含重复元素，返回所有子集且不重复。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数数组。</p>",
+    "output": "<p style=\"text-align:start;\">输出所有子集数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "回溯;var(--color-text-1);rgb(var(--gray-5))",
+      "数组;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 2",
+        "output": "[[],[1],[2],[1,2],[2,2],[1,2,2]]",
+        "explanation": "不重复子集"
+      },
+      {
+        "input": "0 0 1",
+        "output": "[[],[0],[1],[0,0],[0,1],[0,0,1]]",
+        "explanation": "处理重复"
+      },
+      {
+        "input": "2 2 2",
+        "output": "[[],[2],[2,2],[2,2,2]]",
+        "explanation": "所有组合"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "title": "组合",
+    "description": "<p style=\"text-align:start;\">从1到n中选k个数的所有组合。</p>",
+    "input": "<p style=\"text-align:start;\">输入 n 和 k。</p>",
+    "output": "<p style=\"text-align:start;\">输出所有组合数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "回溯;var(--color-text-1);rgb(var(--gray-5))",
+      "数学;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "4 2",
+        "output": "[[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]",
+        "explanation": "从1到4中选2"
+      },
+      {
+        "input": "3 1",
+        "output": "[[1],[2],[3]]",
+        "explanation": "选1个数"
+      },
+      {
+        "input": "2 2",
+        "output": "[[1,2]]",
+        "explanation": "选2个数"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "title": "组合总和",
+    "description": "<p style=\"text-align:start;\">给定数组和目标值，找出所有和为目标的组合，数组可重复使用元素。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数数组 candidates 和目标整数 target。</p>",
+    "output": "<p style=\"text-align:start;\">输出所有组合数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "回溯;var(--color-text-1);rgb(var(--gray-5))",
+      "数组;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "2 3 6 7;7",
+        "output": "[[7],[2,2,3]]",
+        "explanation": "组合和为7"
+      },
+      {
+        "input": "2 3 5;8",
+        "output": "[[2,2,2,2],[2,3,3],[3,5]]",
+        "explanation": "组合和为8"
+      },
+      {
+        "input": "2;1",
+        "output": "[]",
+        "explanation": "无法组成目标"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "title": "N 皇后",
+    "description": "<p style=\"text-align:start;\">在 N×N 棋盘上放置 N 个皇后，使其互不攻击，返回所有解法。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数 n。</p>",
+    "output": "<p style=\"text-align:start;\">输出所有合法棋盘方案。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "回溯;var(--color-text-1);rgb(var(--gray-5))",
+      "棋盘问题;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "4",
+        "output": "['.Q..', '...Q', 'Q...', '..Q.'], ['..Q.', 'Q...', '...Q', '.Q..']",
+        "explanation": "N=4的两种解法"
+      },
+      {
+        "input": "1",
+        "output": "['Q']",
+        "explanation": "N=1只有一种解法"
+      },
+      {
+        "input": "2",
+        "output": "",
+        "explanation": "N=2无解"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "title": "N 皇后 II",
+    "description": "<p style=\"text-align:start;\">返回 N 皇后问题的解法总数。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数 n。</p>",
+    "output": "<p style=\"text-align:start;\">输出解法总数。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "回溯;var(--color-text-1);rgb(var(--gray-5))",
+      "棋盘问题;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "4",
+        "output": "2",
+        "explanation": "N=4有2种解法"
+      },
+      {
+        "input": "1",
+        "output": "1",
+        "explanation": "N=1只有1种解法"
+      },
+      {
+        "input": "2",
+        "output": "0",
+        "explanation": "N=2无解"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "title": "岛屿数量",
+    "description": "<p style=\"text-align:start;\">计算二维网格中岛屿数量（1表示陆地，0表示水）。</p>",
+    "input": "<p style=\"text-align:start;\">输入二维字符数组 grid。</p>",
+    "output": "<p style=\"text-align:start;\">输出岛屿数量。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二维数组;var(--color-text-1);rgb(var(--gray-5))",
+      "深度优先搜索;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "[[\"1\",\"1\",\"0\",\"0\",\"0\"],[\"1\",\"1\",\"0\",\"0\",\"0\"],[\"0\",\"0\",\"1\",\"0\",\"0\"],[\"0\",\"0\",\"0\",\"1\",\"1\"]]",
+        "output": "3",
+        "explanation": "三座岛屿"
+      },
+      {
+        "input": "[[\"1\"]]",
+        "output": "1",
+        "explanation": "单个岛屿"
+      },
+      {
+        "input": "[[\"0\"]]",
+        "output": "0",
+        "explanation": "没有岛屿"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "title": "岛屿最大面积",
+    "description": "<p style=\"text-align:start;\">计算二维网格中最大岛屿的面积。</p>",
+    "input": "<p style=\"text-align:start;\">输入二维网格，1表示陆地，0表示水。</p>",
+    "output": "<p style=\"text-align:start;\">输出最大岛屿面积。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二维数组;var(--color-text-1);rgb(var(--gray-5))",
+      "深度优先搜索;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "[[0,1],[1,1]]",
+        "output": "3",
+        "explanation": "最大岛屿面积为3"
+      },
+      {
+        "input": "[[0,0],[0,0]]",
+        "output": "0",
+        "explanation": "无岛屿"
+      },
+      {
+        "input": "[[1,1,0,0,0],[1,1,0,0,0],[0,0,0,1,1]]",
+        "output": "4",
+        "explanation": "最大岛屿面积为4"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "title": "单词搜索",
+    "description": "<p style=\"text-align:start;\">在二维网格中搜索单词是否存在，字符可上下左右移动且不能重复使用格子。</p>",
+    "input": "<p style=\"text-align:start;\">输入二维字符网格和字符串 word。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：2秒</p><p style=\"text-align:start;\">空间限制：512MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "二维数组;var(--color-text-1);rgb(var(--gray-5))",
+      "回溯;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "[[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]];\"ABCCED\"",
+        "output": "true",
+        "explanation": "单词存在"
+      },
+      {
+        "input": "[[\"A\",\"B\"],[\"C\",\"D\"]];\"ABCD\"",
+        "output": "false",
+        "explanation": "单词不存在"
+      },
+      {
+        "input": "[[\"A\"]];\"A\"",
+        "output": "true",
+        "explanation": "单词存在"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "title": "迷宫问题",
+    "description": "<p style=\"text-align:start;\">判断从入口到出口是否存在路径，0表示空地，1表示墙。</p>",
+    "input": "<p style=\"text-align:start;\">输入二维数组 maze、起点 start 和终点 end。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二维数组;var(--color-text-1);rgb(var(--gray-5))",
+      "深度优先搜索;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "[[0,0,1],[1,0,0],[0,0,0]];[0,0];[2,2]",
+        "output": "true",
+        "explanation": "存在路径"
+      },
+      {
+        "input": "[[0,1],[1,0]];[0,0];[1,1]",
+        "output": "false",
+        "explanation": "无法到达终点"
+      },
+      {
+        "input": "[[0]];[0,0];[0,0]",
+        "output": "true",
+        "explanation": "起点即终点"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "title": "二叉搜索树验证",
+    "description": "<p style=\"text-align:start;\">判断给定二叉树是否为有效 BST。</p>",
+    "input": "<p style=\"text-align:start;\">输入二叉树。</p>",
+    "output": "<p style=\"text-align:start;\">输出true或false。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "二叉搜索树;var(--color-text-1);rgb(var(--brown-5))",
+      "递归;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "2 1 3",
+        "output": "true",
+        "explanation": "有效BST"
+      },
+      {
+        "input": "5 1 4 null null 3 6",
+        "output": "false",
+        "explanation": "左子树大于根节点"
+      },
+      {
+        "input": "1",
+        "output": "true",
+        "explanation": "单节点BST有效"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "title": "路径总和 II",
+    "description": "<p style=\"text-align:start;\">返回所有从根到叶子节点路径和为目标值的路径。</p>",
+    "input": "<p style=\"text-align:start;\">输入二叉树和目标和 target。</p>",
+    "output": "<p style=\"text-align:start;\">输出路径数组。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "二叉树;var(--color-text-1);rgb(var(--brown-5))",
+      "回溯;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "5 4 8 11 null 13 4 7 2 null null 5 1;22",
+        "output": "[[5,4,11,2],[5,8,4,5]]",
+        "explanation": "两条路径和为22"
+      },
+      {
+        "input": "1 2 3;5",
+        "output": "[]",
+        "explanation": "无路径和为5"
+      },
+      {
+        "input": "1 2;3",
+        "output": "[[1,2]]",
+        "explanation": "路径和为3"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "title": "打家劫舍",
+    "description": "<p style=\"text-align:start;\">计算不抢相邻房屋的情况下，能够抢到的最高金额。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数数组 nums。</p>",
+    "output": "<p style=\"text-align:start;\">输出最高金额。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "normal",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "数组;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 1",
+        "output": "4",
+        "explanation": "抢1和3"
+      },
+      {
+        "input": "2 7 9 3 1",
+        "output": "12",
+        "explanation": "抢2+9+1"
+      },
+      {
+        "input": "2 1 1 2",
+        "output": "4",
+        "explanation": "抢2+2"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "title": "打家劫舍 II",
+    "description": "<p style=\"text-align:start;\">房屋环形排列，计算不抢相邻房屋的最高金额。</p>",
+    "input": "<p style=\"text-align:start;\">输入整数数组 nums。</p>",
+    "output": "<p style=\"text-align:start;\">输出最高金额。</p>",
+    "limit": "<p style=\"text-align:start;\">时间限制：1秒</p><p style=\"text-align:start;\">空间限制：256MB</p>",
+    "difficulty": "hard",
+    "tags": [
+      "动态规划;var(--color-text-1);rgb(var(--gray-5))",
+      "数组;var(--color-text-1);rgb(var(--gray-5))"
+    ],
+    "examples": [
+      {
+        "input": "2 3 2",
+        "output": "3",
+        "explanation": "抢第2家"
+      },
+      {
+        "input": "1 2 3 1",
+        "output": "4",
+        "explanation": "抢1和3"
+      },
+      {
+        "input": "1 2 3",
+        "output": "3",
+        "explanation": "抢第3家"
+      }
+    ]
+  }
+]
