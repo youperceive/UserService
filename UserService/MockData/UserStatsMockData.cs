@@ -12,27 +12,27 @@ public static class UserStatsMockData
     {
         return new List<AchievementCard>
         {
-            new AchievementCard
+            new()
             {
                 Description = "等级",
                 Data = 10,
                 Type = "level"
             },
-            new AchievementCard
+            new()
             {
                 Description = "阅读总数",
                 Data = 350,
                 YesterdayData = 50,
                 Type = "read"
             },
-            new AchievementCard
+            new()
             {
                 Description = "获得点赞",
                 Data = 100,
                 YesterdayData = 30,
                 Type = "like"
             },
-            new AchievementCard
+            new()
             {
                 Description = "获得收藏",
                 Data = 80,
@@ -47,27 +47,26 @@ public static class UserStatsMockData
     /// </summary>
     public static List<RecentSolvedItem> GetRecentSolved(string userId)
     {
-        return new List<RecentSolvedItem>
-        {
-            new RecentSolvedItem
+        return [
+            new()
             {
                 Id = 1,
                 Title = "两数之和",
                 LastSolvedAt = DateTime.Parse("2025-09-20T12:30:00")
             },
-            new RecentSolvedItem
+            new()
             {
                 Id = 2,
                 Title = "反转链表",
                 LastSolvedAt = DateTime.Parse("2025-09-21T15:45:00")
             },
-            new RecentSolvedItem
+            new()
             {
                 Id = 3,
                 Title = "最长回文子串",
                 LastSolvedAt = DateTime.Parse("2025-09-25T08:10:00")
             }
-        };
+        ];
     }
 
     /// <summary>
@@ -77,12 +76,12 @@ public static class UserStatsMockData
     {
         return new List<LanguageStatItem>
         {
-            new LanguageStatItem { Name = "C++", Value = 14 },
-            new LanguageStatItem { Name = "Python", Value = 28 },
-            new LanguageStatItem { Name = "Java", Value = 22 },
-            new LanguageStatItem { Name = "JavaScript", Value = 31 },
-            new LanguageStatItem { Name = "Go", Value = 7 },
-            new LanguageStatItem { Name = "Rust", Value = 12 }
+            new() { Name = "C++", Value = 14 },
+            new() { Name = "Python", Value = 28 },
+            new() { Name = "Java", Value = 22 },
+            new() { Name = "JavaScript", Value = 31 },
+            new() { Name = "Go", Value = 7 },
+            new() { Name = "Rust", Value = 12 }
         };
     }
 
@@ -93,12 +92,12 @@ public static class UserStatsMockData
     {
         return new List<TypeStatItem>
         {
-            new TypeStatItem { Name = "数据结构", Value = 35 },
-            new TypeStatItem { Name = "图论", Value = 20 },
-            new TypeStatItem { Name = "数论", Value = 15 },
-            new TypeStatItem { Name = "双指针", Value = 25 },
-            new TypeStatItem { Name = "动态规划", Value = 30 },
-            new TypeStatItem { Name = "贪心", Value = 18 }
+            new() { Name = "数据结构", Value = 35 },
+            new() { Name = "图论", Value = 20 },
+            new() { Name = "数论", Value = 15 },
+            new() { Name = "双指针", Value = 25 },
+            new() { Name = "动态规划", Value = 30 },
+            new() { Name = "贪心", Value = 18 }
         };
     }
 

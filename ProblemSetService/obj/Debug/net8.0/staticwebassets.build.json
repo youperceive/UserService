@@ -1,1 +1,11 @@
-{"Version":1,"Hash":"tfu76fdza/+eKAjEmZEYHfdcMpCfwK9tBpr6ifyLzzY=","Source":"ProblemSetService","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "rXPr5SV1xhD0gdyAm5r1z6nKifnFpj98WP/1SbyG2jU=",
+  "Source": "ProblemSetService",
+  "BasePath": "_content/ProblemSetService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -30,8 +30,18 @@ public class AIService
         // 检查缓存（除非强制刷新）
         if (!forceRefresh && _hintCache.TryGetValue(cacheKey, out var cachedHint))
         {
+            Console.WriteLine($"[AIService] 返回缓存提示: QuestionId={questionId}, Level={level}");
             cachedHint.FromCache = true;
             return cachedHint;
+        }
+        
+        if (forceRefresh)
+        {
+            Console.WriteLine($"[AIService] 强制刷新，重新生成提示: QuestionId={questionId}, Level={level}");
+        }
+        else
+        {
+            Console.WriteLine($"[AIService] 首次生成提示: QuestionId={questionId}, Level={level}");
         }
         
         var prompt = BuildHintPrompt(questionTitle, questionDesc, level, userCode, language);
@@ -51,12 +61,9 @@ public class AIService
                 FromCache = false
             };
             
-            // 缓存（如果是强制刷新，先移除旧缓存）
-            if (forceRefresh)
-            {
-                _hintCache.TryRemove(cacheKey, out _);
-            }
-            _hintCache.TryAdd(cacheKey, hint);
+            // 更新缓存（强制刷新时直接覆盖，否则添加）
+            _hintCache.AddOrUpdate(cacheKey, hint, (key, oldValue) => hint);
+            Console.WriteLine($"[AIService] 提示已生成并缓存: QuestionId={questionId}, Level={level}, FromCache=false");
             
             return hint;
         }
@@ -125,70 +132,75 @@ public class AIService
     /// </summary>
     private string BuildHintPrompt(string title, string desc, int level, string? userCode, string? language)
     {
-        var sb = new StringBuilder();
-        sb.AppendLine($"题目：{title}");
-        sb.AppendLine($"描述：{desc}");
-        sb.AppendLine();
+        var stringBuilder = new StringBuilder();
+        stringBuilder.AppendLine($"题目：{title}");
+        stringBuilder.AppendLine($"描述：{desc}");
+        stringBuilder.AppendLine();
         
         var lang = language ?? "C++";
         
         switch (level)
         {
-            case 1: // 轻度提示 - 最严格
-                sb.AppendLine("请给出轻度提示（Level 1）：");
-                sb.AppendLine("【重要】绝对禁止事项：");
-                sb.AppendLine("- 严禁提及任何具体的算法名称（如：动态规划、二分查找、DFS、BFS等）");
-                sb.AppendLine("- 严禁提及任何具体的数据结构名称（如：栈、队列、哈希表、树等）");
-                sb.AppendLine("- 严禁给出任何代码、伪代码或代码片段");
-                sb.AppendLine("- 严禁给出具体的实现步骤");
-                sb.AppendLine();
-                sb.AppendLine("【允许的提示内容】：");
-                sb.AppendLine("- 只能用通俗的语言描述解题的大致思考方向");
-                sb.AppendLine("- 可以提醒需要注意的边界条件和特殊情况");
-                sb.AppendLine("- 可以提示题目的关键突破点（但不能说具体怎么做）");
-                sb.AppendLine("- 控制在2-4句话以内");
-                sb.AppendLine("- 用简体中文回答，不要使用专业术语");
-                sb.AppendLine();
-                sb.AppendLine("示例（好的轻度提示）：");
-                sb.AppendLine("\"思考一下如何记录之前看过的信息，避免重复计算。注意处理空值和边界情况。\"");
+            case 1: // 轻度提示 - 只给方向，绝对不能有代码
+                stringBuilder.AppendLine("【Level 1 - 轻度提示】只给思路方向，帮助理解题目。");
+                stringBuilder.AppendLine();
+                stringBuilder.AppendLine("严格要求：");
+                stringBuilder.AppendLine("1. 只用白话说思路方向，像朋友间聊天");
+                stringBuilder.AppendLine("2. 绝对禁止：任何代码、伪代码、代码片段、代码示例");
+                stringBuilder.AppendLine("3. 绝对禁止：专业术语（如动态规划、哈希表、栈、队列、DFS、BFS等）");
+                stringBuilder.AppendLine("4. 绝对禁止：具体的实现步骤");
+                stringBuilder.AppendLine("5. 只能做：用通俗语言提示思考方向、提醒容易忽略的点");
+                stringBuilder.AppendLine("6. 长度：2-3句话");
+                stringBuilder.AppendLine();
+                stringBuilder.AppendLine("示例好的回答：");
+                stringBuilder.AppendLine("「这题关键是要记住之前算过的结果，避免重复计算。注意考虑一下输入为空的情况。」");
+                stringBuilder.AppendLine();
+                stringBuilder.AppendLine("示例错误回答（包含代码）：");
+                stringBuilder.AppendLine("「可以这样写：int result = a + b; - 这是错的，不要模仿！」");
                 break;
                 
-            case 2: // 中度提示 - 可提及技术但不给代码
-                sb.AppendLine("请给出中度提示（Level 2）：");
-                sb.AppendLine("【允许的内容】：");
-                sb.AppendLine("- 可以提及适合使用的数据结构类型（如：需要先进先出的结构）");
-                sb.AppendLine("- 可以提及算法的大类（如：遍历、搜索、优化等）");
-                sb.AppendLine("- 给出解题的关键步骤（用文字描述）");
-                sb.AppendLine();
-                sb.AppendLine("【严格禁止】：");
-                sb.AppendLine("- 绝对不能给出任何代码");
-                sb.AppendLine("- 不能给出伪代码");
-                sb.AppendLine("- 不能给出具体的API调用");
-                sb.AppendLine();
-                sb.AppendLine("- 控制在4-7句话");
-                sb.AppendLine("- 用简体中文回答");
+            case 2: // 中度提示 - 可以提方法，但不给代码
+                stringBuilder.AppendLine("【Level 2 - 中度提示】可以说方法和步骤，但不给代码。");
+                stringBuilder.AppendLine();
+                stringBuilder.AppendLine("允许做的：");
+                stringBuilder.AppendLine("1. 说明具体的解题思路和方法");
+                stringBuilder.AppendLine("2. 可以提到适合的数据结构类型（如「需要用能快速查找的结构」）");
+                stringBuilder.AppendLine("3. 用自然语言描述算法步骤（如「先遍历一遍，再从后往前处理」）");
+                stringBuilder.AppendLine("4. 提到算法复杂度的大致要求");
+                stringBuilder.AppendLine();
+                stringBuilder.AppendLine("严格禁止：");
+                stringBuilder.AppendLine("1. 任何代码、伪代码、代码片段");
+                stringBuilder.AppendLine("2. 具体的API调用（如「使用map.get()」「调用Arrays.sort()」这些）");
+                stringBuilder.AppendLine();
+                stringBuilder.AppendLine("长度：4-6句话，分步骤说明");
                 break;
                 
-            case 3: // 深度提示 - 可以给伪代码和算法
-                sb.AppendLine("请给出深度提示（Level 3）：");
-                sb.AppendLine("- 详细说明完整的解题思路和算法");
-                sb.AppendLine("- 给出清晰的伪代码或算法步骤");
-                sb.AppendLine($"- 如果给出代码片段，使用{lang}语言");
-                sb.AppendLine("- 说明时间和空间复杂度");
-                sb.AppendLine("- 可以接近完整解法，但建议留一些细节让用户自己实现");
-                sb.AppendLine($"- 用简体中文回答，代码注释也用中文，代码使用{lang}");
+            case 3: // 深度提示 - 可以给接近完整的方案
+                stringBuilder.AppendLine("【Level 3 - 深度提示】给出详细方案，可以包含关键代码片段。");
+                stringBuilder.AppendLine();
+                stringBuilder.AppendLine("要求：");
+                stringBuilder.AppendLine("1. 完整的解题思路和算法说明");
+                stringBuilder.AppendLine("2. 可以给出关键代码片段或算法伪代码");
+                stringBuilder.AppendLine($"3. 如果给代码，用{lang}语言，确保代码格式正确，用```包裹");
+                stringBuilder.AppendLine("4. 说明时间和空间复杂度");
+                stringBuilder.AppendLine("5. 接近完整解法，但留一些细节让用户自己实现");
+                stringBuilder.AppendLine();
+                stringBuilder.AppendLine("代码格式要求：");
+                stringBuilder.AppendLine($"```{lang.ToLower()}");
+                stringBuilder.AppendLine("// 代码示例");
+                stringBuilder.AppendLine("```");
                 break;
         }
         
         if (!string.IsNullOrEmpty(userCode))
         {
-            sb.AppendLine();
-            sb.AppendLine($"用户当前代码（{lang}）：");
-            sb.AppendLine(userCode);
-            sb.AppendLine("请根据用户代码给出更有针对性的提示，指出可能的问题方向");
+            stringBuilder.AppendLine();
+            stringBuilder.AppendLine($"他写的代码（{lang}）：");
+            stringBuilder.AppendLine(userCode);
+            stringBuilder.AppendLine("看看他的代码，针对性地给点建议。");
         }
         
-        return sb.ToString();
+        return stringBuilder.ToString();
     }
     
     /// <summary>
@@ -197,34 +209,34 @@ public class AIService
     private string BuildSolutionPrompt(string title, string desc, string? language = null)
     {
         var lang = language ?? "C++";
-        return $@"请为以下算法题目生成标准题解：
+        return $@"写一个这道题的详细题解：
 
 题目：{title}
 描述：{desc}
 
-请按以下格式输出：
+按这个结构来写：
 
 # 解题思路
-[详细的解题思路]
+[把解题的想法说清楚，怎么想到这个方法的]
 
 # 算法说明
-[使用的算法和数据结构]
+[具体用什么方法和技巧]
 
 # 复杂度分析
-时间复杂度：[如 O(n)]
-空间复杂度：[如 O(1)]
+时间复杂度：O(...)
+空间复杂度：O(...)
 
 # 关键点
-- [关键点1]
-- [关键点2]
-- [关键点3]
+- [重点1]
+- [重点2]
+- [重点3]
 
 # {lang}示例代码
 ```{lang.ToLower()}
-[完整的{lang}代码]
+[完整可运行的代码]
 ```
 
-用简体中文回答，代码部分使用{lang}。";
+注意：写得自然一些，就像在给同学讲解一样，别太官方。用简体中文，代码用{lang}。";
     }
     
     /// <summary>
@@ -232,53 +244,50 @@ public class AIService
     /// </summary>
     private string BuildCodeAnalysisPrompt(string title, string desc, string userCode, string language)
     {
-        return $@"作为一个算法评测系统，请从算法正确性角度分析以下用户提交的代码。
-
-【重要】评分标准：
-- 这是算法评测，不是代码审查
-- 只关注：代码能否正确解决题目要求
-- 不关注：代码风格、变量命名、注释、鲁棒性（如NULL检查、边界保护等）
-- 评分依据：能否通过测试用例、算法逻辑是否正确
+        return $@"分析一下这段代码写得怎么样。
 
 题目：{title}
 描述：{desc}
-编程语言：{language}
+语言：{language}
 
-用户代码：
+代码：
 ```{language.ToLower()}
 {userCode}
 ```
 
-请严格按以下格式输出（必须包含所有标题）：
+帮我看看：
+1. 这代码能不能正确解决题目？算法逻辑对不对？
+2. 不用管代码风格、命名、注释这些，就看功能对不对
+3. 也不用管什么NULL检查、异常处理，就看算法本身
+
+按这个格式给反馈：
 
 # 整体评价
-[一句话评价代码能否解决问题，30字以内]
+[一句话总结，这代码行不行]
 
 # 正确性分析
-[详细分析代码逻辑是否正确，能否满足题目要求，能否通过测试用例。只关注算法逻辑，不评价代码风格。]
+[说说逻辑对不对，能不能通过测试，有没有bug]
 
 # 复杂度分析
-时间复杂度：O(n) - [简短说明]
-空间复杂度：O(1) - [简短说明]
+时间复杂度：O(...) - [简单说说]
+空间复杂度：O(...) - [简单说说]
 
 # 优化建议
-- [如果有更优的算法，给出建议1]
-- [如果有性能问题，给出建议2]
-- [如果逻辑有误，给出修正建议]
+- [如果能改进就说说怎么改]
+- [如果有bug就说说怎么修]
+- [如果有更好的方法就提一下]
 
 # 评分
-[0-100分的数字，只需要数字]
+[给个0-100的分数，就写数字]
 
-评分参考：
-- 90-100分：算法完全正确，能通过所有测试用例
-- 70-89分：算法基本正确，可能存在小的边界问题
-- 50-69分：算法思路正确但实现有明显错误
-- 30-49分：算法思路部分正确
-- 0-29分：算法思路错误或无法运行
+打分规则：
+- 90-100：算法对的，能AC
+- 70-89：大体对的，可能有小问题
+- 50-69：思路对但实现有问题
+- 30-49：思路不太对
+- 0-29：基本不对
 
-【再次强调】不要因为缺少NULL检查、缺少异常处理、变量命名不规范等代码风格问题扣分！只评价算法逻辑！
-
-用简体中文回答。";
+记住：只看算法对不对，别管代码写得好不好看。语气自然点，别太正式。";
     }
     
     /// <summary>

@@ -1,19 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "25x7DFSgDbM=",
+  "dgSpecHash": "E8b1mw0BWKc=",
   "success": true,
   "projectFilePath": "D:\\SourceCode\\CSharpProject\\WebAPI\\UserService\\ModelLibrary\\ModelLibrary.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\sxkane\\.nuget\\packages\\sqlsugar\\5.1.4.200\\sqlsugar.5.1.4.200.nupkg.sha512",
-    "C:\\Users\\sxkane\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.20\\microsoft.netcore.app.ref.8.0.20.nupkg.sha512",
-    "C:\\Users\\sxkane\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.20\\microsoft.windowsdesktop.app.ref.8.0.20.nupkg.sha512",
-    "C:\\Users\\sxkane\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.20\\microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512"
+    "C:\\Users\\sxkane\\.nuget\\packages\\sqlsugar\\5.1.4.200\\sqlsugar.5.1.4.200.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1701",
       "level": "Warning",
-      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1”而不是项目目标框架“net8.0”还原包“SqlSugar 5.1.4.200”。此包可能与项目不完全兼容。",
+      "message": "Package 'SqlSugar 5.1.4.200' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "projectPath": "D:\\SourceCode\\CSharpProject\\WebAPI\\UserService\\ModelLibrary\\ModelLibrary.csproj",
       "warningLevel": 1,
       "filePath": "D:\\SourceCode\\CSharpProject\\WebAPI\\UserService\\ModelLibrary\\ModelLibrary.csproj",
