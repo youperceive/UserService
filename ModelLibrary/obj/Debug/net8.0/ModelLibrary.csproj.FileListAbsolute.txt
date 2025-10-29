@@ -11,3 +11,16 @@ D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net8.0\Mod
 D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net8.0\refint\ModelLibrary.dll
 D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net8.0\ModelLibrary.pdb
 D:\SourceCode\CSharpProject\WebAPI\UserService\ModelLibrary\obj\Debug\net8.0\ref\ModelLibrary.dll
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\bin\Debug\net8.0\ModelLibrary.deps.json
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\bin\Debug\net8.0\ModelLibrary.dll
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\bin\Debug\net8.0\ModelLibrary.pdb
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\obj\Debug\net8.0\ModelLibrary.csproj.AssemblyReference.cache
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\obj\Debug\net8.0\ModelLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\obj\Debug\net8.0\ModelLibrary.AssemblyInfoInputs.cache
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\obj\Debug\net8.0\ModelLibrary.AssemblyInfo.cs
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\obj\Debug\net8.0\ModelLibrary.csproj.CoreCompileInputs.cache
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\obj\Debug\net8.0\ModelLibrary.sourcelink.json
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\obj\Debug\net8.0\ModelLibrary.dll
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\obj\Debug\net8.0\refint\ModelLibrary.dll
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\obj\Debug\net8.0\ModelLibrary.pdb
+C:\Users\hp\RiderProjects\UserService\ModelLibrary\obj\Debug\net8.0\ref\ModelLibrary.dll

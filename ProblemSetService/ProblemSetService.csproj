@@ -4,13 +4,14 @@
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <PlatformTarget>x86</PlatformTarget>
+        <Version>1.0.0.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Docker.DotNet" Version="3.125.15" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+        <PackageReference Include="Npgsql" Version="10.0.0-rc.1" />
         <PackageReference Include="Pipelines.Sockets.Unofficial" Version="2.2.8" />
         <PackageReference Include="SqlSugar" Version="5.1.4.203-preview05" />
         <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="9.0.6" />

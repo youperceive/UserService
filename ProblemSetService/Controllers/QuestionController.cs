@@ -6,7 +6,7 @@ namespace ProblemSetService.Controllers;
 
 [ApiController]
 [Route("api/question")]  // 明确指定小写路由，与前端保持一致
-public class QuestionController : ControllerBase
+public class QuestionController(ProblemSetService service) : ControllerBase
 {
     private static List<Question>? _cachedQuestions;
     private static readonly object _lock = new();
@@ -249,6 +249,13 @@ public class QuestionController : ControllerBase
         {
             return StatusCode(500, new { error = ex.Message });
         }
+    }
+
+    [HttpGet("recommend")]
+    public async Task<IActionResult> RecommendQuestions([FromQuery] string userName)
+    {
+        var res = await service.GetRecommendFromFlask(userName);
+        return Ok(res);
     }
 }
 

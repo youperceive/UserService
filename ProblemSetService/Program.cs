@@ -3,6 +3,8 @@ using ProblemSetService;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddHttpClient(); 
+
 // 配置日志
 builder.Logging.AddConsole();
 
@@ -93,7 +95,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 // 端口设置
-app.Urls.Add("http://localhost:5170");
-app.Urls.Add("https://localhost:7170");
+app.Urls.Add("http://localhost:5171");
+app.Urls.Add("https://localhost:7171");
 
 app.Run();

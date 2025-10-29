@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QAService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43caa25a124237ae3c3e335751653db8a87c27c5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04c4865ac3fabe6aa7c58dd0b6fb1c330c549c1e")]
 [assembly: System.Reflection.AssemblyProductAttribute("QAService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QAService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
