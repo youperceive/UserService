@@ -19,6 +19,9 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// 注册知识图谱服务
+builder.Services.AddSingleton<KnowledgeGraphService>();
+
 // 注册 AI 服务
 builder.Services.AddSingleton<AIService>();
 
@@ -61,6 +64,7 @@ Console.WriteLine("  功能:");
 Console.WriteLine("  ✓ 做题前提示（3级渐进）");
 Console.WriteLine("  ✓ AI题解生成");
 Console.WriteLine("  ✓ 代码分析与优化建议");
+Console.WriteLine("  ✓ 知识图谱增强（算法识别）");
 Console.WriteLine("=========================================");
 Console.WriteLine();
 

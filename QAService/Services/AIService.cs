@@ -14,10 +14,12 @@ public class AIService
     private static readonly ConcurrentDictionary<string, HintResponse> _hintCache = new();
     private static readonly ConcurrentDictionary<int, SolutionResponse> _solutionCache = new();
     private readonly IConfiguration _configuration;
+    private readonly KnowledgeGraphService _kgService;
     
-    public AIService(IConfiguration configuration)
+    public AIService(IConfiguration configuration, KnowledgeGraphService kgService)
     {
         _configuration = configuration;
+        _kgService = kgService;
     }
     
     /// <summary>
@@ -139,6 +141,27 @@ public class AIService
         
         var lang = language ?? "C++";
         
+        // 🌟 知识图谱增强：提取题目涉及的知识点
+        var knowledgeTags = _kgService.ExtractKnowledgeTags(title, desc);
+        if (knowledgeTags.Any())
+        {
+            stringBuilder.AppendLine("【知识图谱分析】");
+            stringBuilder.AppendLine($"这道题涉及的知识点：{string.Join("、", knowledgeTags)}");
+            
+            // 对于 Level 1 和 2，提供前置知识提示
+            if (level <= 2)
+            {
+                var prerequisites = _kgService.GetPrerequisites(knowledgeTags);
+                if (prerequisites.Any())
+                {
+                    stringBuilder.AppendLine($"需要掌握的前置知识：{string.Join("、", prerequisites)}");
+                }
+            }
+            
+            stringBuilder.AppendLine("请基于这些知识点给出提示。");
+            stringBuilder.AppendLine();
+        }
+        
         switch (level)
         {
             case 1: // 轻度提示 - 只给方向，绝对不能有代码
@@ -244,50 +267,83 @@ public class AIService
     /// </summary>
     private string BuildCodeAnalysisPrompt(string title, string desc, string userCode, string language)
     {
-        return $@"分析一下这段代码写得怎么样。
-
-题目：{title}
-描述：{desc}
-语言：{language}
-
-代码：
-```{language.ToLower()}
-{userCode}
-```
-
-帮我看看：
-1. 这代码能不能正确解决题目？算法逻辑对不对？
-2. 不用管代码风格、命名、注释这些，就看功能对不对
-3. 也不用管什么NULL检查、异常处理，就看算法本身
-
-按这个格式给反馈：
-
-# 整体评价
-[一句话总结，这代码行不行]
-
-# 正确性分析
-[说说逻辑对不对，能不能通过测试，有没有bug]
-
-# 复杂度分析
-时间复杂度：O(...) - [简单说说]
-空间复杂度：O(...) - [简单说说]
-
-# 优化建议
-- [如果能改进就说说怎么改]
-- [如果有bug就说说怎么修]
-- [如果有更好的方法就提一下]
-
-# 评分
-[给个0-100的分数，就写数字]
-
-打分规则：
-- 90-100：算法对的，能AC
-- 70-89：大体对的，可能有小问题
-- 50-69：思路对但实现有问题
-- 30-49：思路不太对
-- 0-29：基本不对
-
-记住：只看算法对不对，别管代码写得好不好看。语气自然点，别太正式。";
+        var promptBuilder = new StringBuilder();
+        promptBuilder.AppendLine("分析一下这段代码写得怎么样。");
+        promptBuilder.AppendLine();
+        promptBuilder.AppendLine($"题目：{title}");
+        promptBuilder.AppendLine($"描述：{desc}");
+        promptBuilder.AppendLine($"语言：{language}");
+        promptBuilder.AppendLine();
+        
+        // 🌟 知识图谱增强：分析题目要求的算法 vs 代码实际使用的算法
+        var expectedKnowledge = _kgService.ExtractKnowledgeTags(title, desc);
+        var detectedAlgorithms = _kgService.DetectAlgorithmPatterns(userCode);
+        
+        if (expectedKnowledge.Any() || detectedAlgorithms.Any())
+        {
+            promptBuilder.AppendLine("【知识图谱诊断】");
+            
+            if (expectedKnowledge.Any())
+            {
+                promptBuilder.AppendLine($"题目通常需要的知识点：{string.Join("、", expectedKnowledge)}");
+            }
+            
+            if (detectedAlgorithms.Any())
+            {
+                promptBuilder.AppendLine($"代码中检测到的算法：{string.Join("、", detectedAlgorithms)}");
+            }
+            
+            // 找出可能缺失的知识点
+            var missingConcepts = expectedKnowledge.Except(detectedAlgorithms).ToList();
+            if (missingConcepts.Any())
+            {
+                promptBuilder.AppendLine($"⚠️ 可能缺少的关键算法：{string.Join("、", missingConcepts)}");
+                promptBuilder.AppendLine("在分析时请特别关注这些算法是否被正确实现（或者可能用了其他等效方法）。");
+            }
+            
+            promptBuilder.AppendLine();
+        }
+        
+        promptBuilder.AppendLine($"代码：");
+        promptBuilder.AppendLine($"```{language.ToLower()}");
+        promptBuilder.AppendLine(userCode);
+        promptBuilder.AppendLine("```");
+        promptBuilder.AppendLine();
+        promptBuilder.AppendLine("帮我看看：");
+        promptBuilder.AppendLine("1. 这代码能不能正确解决题目？算法逻辑对不对？");
+        promptBuilder.AppendLine("2. 不用管代码风格、命名、注释这些，就看功能对不对");
+        promptBuilder.AppendLine("3. 也不用管什么NULL检查、异常处理，就看算法本身");
+        promptBuilder.AppendLine();
+        promptBuilder.AppendLine("按这个格式给反馈：");
+        promptBuilder.AppendLine();
+        promptBuilder.AppendLine("# 整体评价");
+        promptBuilder.AppendLine("[一句话总结，这代码行不行]");
+        promptBuilder.AppendLine();
+        promptBuilder.AppendLine("# 正确性分析");
+        promptBuilder.AppendLine("[说说逻辑对不对，能不能通过测试，有没有bug]");
+        promptBuilder.AppendLine();
+        promptBuilder.AppendLine("# 复杂度分析");
+        promptBuilder.AppendLine("时间复杂度：O(...) - [简单说说]");
+        promptBuilder.AppendLine("空间复杂度：O(...) - [简单说说]");
+        promptBuilder.AppendLine();
+        promptBuilder.AppendLine("# 优化建议");
+        promptBuilder.AppendLine("- [如果能改进就说说怎么改]");
+        promptBuilder.AppendLine("- [如果有bug就说说怎么修]");
+        promptBuilder.AppendLine("- [如果有更好的方法就提一下]");
+        promptBuilder.AppendLine();
+        promptBuilder.AppendLine("# 评分");
+        promptBuilder.AppendLine("[给个0-100的分数，就写数字]");
+        promptBuilder.AppendLine();
+        promptBuilder.AppendLine("打分规则：");
+        promptBuilder.AppendLine("- 90-100：算法对的，能AC");
+        promptBuilder.AppendLine("- 70-89：大体对的，可能有小问题");
+        promptBuilder.AppendLine("- 50-69：思路对但实现有问题");
+        promptBuilder.AppendLine("- 30-49：思路不太对");
+        promptBuilder.AppendLine("- 0-29：基本不对");
+        promptBuilder.AppendLine();
+        promptBuilder.AppendLine("记住：只看算法对不对，别管代码写得好不好看。语气自然点，别太正式。");
+        
+        return promptBuilder.ToString();
     }
     
     /// <summary>
