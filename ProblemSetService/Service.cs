@@ -1,10 +1,12 @@
 ﻿using ModelLibrary.api;
 using ModelLibrary.repo;
 using System.Linq;
+using System.Text.Json;
+using ProblemSetService.Models;
 
 namespace ProblemSetService;
 
-public class ProblemSetService(ProblemSetRepository repo)
+public class ProblemSetService(ProblemSetRepository repo, HttpClient httpClient)
 {
     public CreateProblemResponse CreateProblem(CreateProblemRequest request)
     {
@@ -345,4 +347,29 @@ public class ProblemSetService(ProblemSetRepository repo)
         }
     }
     #endregion
+
+    public async Task<RecommendResponse> GetRecommendFromFlask(string userName, int topK = 5)
+    {
+        try
+        {
+            // 构造请求 URL（Flask 服务地址）
+            var url = $"http://localhost:5000/recommend?user_handle={userName}&top_k={topK}";
+        
+            // 发送 GET 请求并反序列化为 RecommendResponse
+            var response = await httpClient.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+        
+            var json = await response.Content.ReadAsStringAsync();
+            var recommendResult = JsonSerializer.Deserialize<RecommendResponse>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true // 兼容大小写（可选，因已用 JsonPropertyName 明确映射）
+            });
+        
+            return recommendResult ?? new RecommendResponse { Success = false, Error = "未获取到推荐数据" };
+        }
+        catch (Exception ex)
+        {
+            return new RecommendResponse { Success = false, Error = ex.Message };
+        }
+    }
 }

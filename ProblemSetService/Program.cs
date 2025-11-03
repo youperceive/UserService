@@ -3,6 +3,8 @@ using ProblemSetService;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddHttpClient(); 
+
 // 配置日志
 builder.Logging.AddConsole();
 

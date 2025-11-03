@@ -74,3 +74,12 @@ public class QuestionExampleJson
     public string? Explanation { get; set; }
 }
 
+public class RecommendRequest
+{
+    public string UserName { get; set; } = "";
+}
+
+public partial class RecommendResponse
+{
+    public string Message { get; set; } = "";
+}
